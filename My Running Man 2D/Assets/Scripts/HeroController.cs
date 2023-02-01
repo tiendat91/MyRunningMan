@@ -65,6 +65,13 @@ public class HeroController : MonoBehaviour
 
         CollisionBelow();
 
+        //Test ray cast
+        Debug.DrawRay(_boundsBottomLeft, Vector2.left, Color.green);
+        Debug.DrawRay(_boundsBottomRight, Vector2.right, Color.green);
+        Debug.DrawRay(_boundsTopLeft, Vector2.left, Color.green);
+        Debug.DrawRay(_boundsTopRight, Vector2.right, Color.green);
+
+
         transform.Translate(_movePosition, Space.Self);
 
         //end of frame
@@ -91,27 +98,26 @@ public class HeroController : MonoBehaviour
             return;
         }
 
-        //Calculate ray length
+        //Calculate ray length will collide with ground
         float rayLength = _boundsHeight / 2f + _skin;
         if (_movePosition.y < 0)
         {
             rayLength += Mathf.Abs(_movePosition.y);
         }
 
-        //Calculate ray origin
+        //Calculate ray origin 
         Vector2 leftOrigin = (_boundsBottomLeft + _boundsTopLeft) / 2f;
         Vector2 rightOrigin = (_boundsBottomRight + _boundsTopRight) / 2f;
         leftOrigin += (Vector2)(transform.up * _skin) + (Vector2)(transform.right * _movePosition.x);
         rightOrigin += (Vector2)(transform.up * _skin) + (Vector2)(transform.right * _movePosition.x);
 
-        //Raycast
+        //Raycast 
         for (int i = 0; i < verticalRayAmount; i++)
         {
             Vector2 rayOrigin = Vector2.Lerp(leftOrigin, rightOrigin, (float)i / (float)(verticalRayAmount - 1));
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -transform.up, rayLength, collideWith);
             Debug.DrawRay(rayOrigin, -transform.up * rayLength, Color.green);
-            Debug.Log(rayOrigin);
-            if (hit)//khi cham vat the
+            if (hit)//khi raycast cham vat can
             {
                 _movePosition.y = -hit.distance + _boundsHeight / 2f + _skin;
 
@@ -120,7 +126,7 @@ public class HeroController : MonoBehaviour
 
                 if (Mathf.Abs(_movePosition.y) < 0.0001f)
                 {
-                    _movePosition.y = 0f;
+                    _movePosition.y = 0f;//dung du
                 }
             }
             else
@@ -155,9 +161,7 @@ public class HeroController : MonoBehaviour
                 {
                     _movePosition.x = -hit.distance + _boundsWidth / 2f + _skin * 2f;
                 }
-
                 _force.x = 0f;
-                Debug.Log("yUMMY");
             }
         }
     }
@@ -219,12 +223,13 @@ public class HeroController : MonoBehaviour
     #region Ray Origins
     private void SetRayOrigins()
     {
+        //Cast 4 ray -> 4 goc cua player & tinh chieu cao/chieu rong cua player
         Bounds playerBounds = _boxCollider2D.bounds;
 
         _boundsBottomLeft = new Vector2(playerBounds.min.x, playerBounds.min.y);
         _boundsBottomRight = new Vector2(playerBounds.max.x, playerBounds.min.y);
         _boundsTopLeft = new Vector2(playerBounds.min.x, playerBounds.max.y);
-        _boundsBottomRight = new Vector2(playerBounds.max.x, playerBounds.max.y);
+        _boundsTopRight = new Vector2(playerBounds.max.x, playerBounds.max.y);
 
         _boundsHeight = Vector2.Distance(_boundsBottomLeft, _boundsTopLeft);
         _boundsWidth = Vector2.Distance(_boundsBottomLeft, _boundsBottomRight);
