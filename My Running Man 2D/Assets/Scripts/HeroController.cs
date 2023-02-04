@@ -37,11 +37,14 @@ public class HeroController : MonoBehaviour
     [SerializeField] private int verticalRayAmount = 4; //how many ray to cast vertically
     [SerializeField] private int horizontalRayAmount = 4;
 
+    #region Properties
     public bool FacingRight { get; set; }
 
     public float Gravity => gravity;
     public Vector2 Force => _force;
     public HeroConditions Conditions => _conditions;
+    #endregion
+
 
     void Start()
     {
@@ -70,6 +73,7 @@ public class HeroController : MonoBehaviour
         }
 
         CollisionBelow();
+        CollisionAbove();
 
         //Test ray cast
         Debug.DrawRay(_boundsBottomLeft, Vector2.left, Color.green);
@@ -175,6 +179,40 @@ public class HeroController : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Collision Above
+    private void CollisionAbove()
+    {
+        if (_movePosition.y < 0)
+        {
+            return;
+        }
+        //Set rayLenght
+        float rayLenght = _movePosition.y + _boundsHeight / 2f;
+
+        //Origin Points
+        Vector2 rayTopLeft = (_boundsBottomLeft + _boundsTopLeft) / 2f;
+        Vector2 rayTopRight = (_boundsBottomRight + _boundsTopRight) / 2f;
+        rayTopLeft += (Vector2)transform.right * _movePosition.x;
+        rayTopRight += (Vector2)transform.right * _movePosition.x;
+
+        for (int i = 0; i < verticalRayAmount; i++)
+        {
+            Vector2 rayOrigin = Vector2.Lerp(rayTopLeft, rayTopRight, (float)i / (float)(verticalRayAmount - 1));
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, transform.up, rayLenght, collideWith);
+            Debug.DrawRay(rayOrigin, transform.up * rayLenght, Color.red);
+            if (hit)
+            {
+                _movePosition.y = hit.distance - _boundsHeight / 2f;
+                _conditions.IsCollidingAbove = true;
+            }
+            else
+            {
+                _conditions.IsCollidingAbove = false;
+            }
+        }
+    }
     #endregion
 
     #endregion

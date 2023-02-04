@@ -5,6 +5,8 @@ using UnityEngine;
 public class HeroConditions : MonoBehaviour
 {
     public bool IsCollidingBelow { get; set; }
+    public bool IsCollidingAbove { get; set; }
+
     public bool IsFalling { get; set; }
     public void Reset()
     {
