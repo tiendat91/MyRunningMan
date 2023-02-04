@@ -25,6 +25,8 @@ public class HeroController : MonoBehaviour
     private float _internalFaceDirection = 1f;
     private float _faceDirection;
 
+    private float _wallFallMultiplier;
+
     #endregion
 
     [Header("Settings")]
@@ -166,13 +168,16 @@ public class HeroController : MonoBehaviour
             Debug.DrawRay(rayOrigin, transform.right * rayLenght * direction, Color.cyan);
             if (hit)
             {
+
                 if (direction >= 0)
                 {
                     _movePosition.x = hit.distance - _boundsWidth / 2f - _skin * 2f;
+                    _conditions.IsCollidingRight = true;
                 }
                 else
                 {
                     _movePosition.x = -hit.distance + _boundsWidth / 2f + _skin * 2f;
+                    _conditions.IsCollidingLeft = true;
                 }
                 _force.x = 0f;
             }
@@ -252,7 +257,18 @@ public class HeroController : MonoBehaviour
         }
 
         _force.y += _currentGravity * Time.deltaTime;
+
+        if (_wallFallMultiplier != 0)
+        {
+            _force.y *= _wallFallMultiplier;
+        }
     }
+
+    public void SeteWallClingMultiplier(float fallM)
+    {
+        _wallFallMultiplier = fallM;
+    }
+
     #endregion
 
     #region Direction
