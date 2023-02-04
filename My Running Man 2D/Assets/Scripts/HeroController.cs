@@ -29,6 +29,8 @@ public class HeroController : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float gravity = -20f;
+    [SerializeField] private float fallMultiplier = 2f;
+
 
     [Header("Collisions")]
     [SerializeField] private LayerMask collideWith;
@@ -36,6 +38,10 @@ public class HeroController : MonoBehaviour
     [SerializeField] private int horizontalRayAmount = 4;
 
     public bool FacingRight { get; set; }
+
+    public float Gravity => gravity;
+    public Vector2 Force => _force;
+    public HeroConditions Conditions => _conditions;
 
     void Start()
     {
@@ -119,8 +125,15 @@ public class HeroController : MonoBehaviour
             Debug.DrawRay(rayOrigin, -transform.up * rayLength, Color.green);
             if (hit)//khi raycast cham vat can
             {
-                _movePosition.y = -hit.distance + _boundsHeight / 2f + _skin;
-
+                if (_force.y > 0)
+                {
+                    _movePosition.y = _force.y * Time.deltaTime;
+                    _conditions.IsCollidingBelow = false;
+                }
+                else
+                {
+                    _movePosition.y = -hit.distance + _boundsHeight / 2f + _skin;
+                }
                 _conditions.IsCollidingBelow = true;
                 _conditions.IsFalling = false;
 
@@ -128,10 +141,6 @@ public class HeroController : MonoBehaviour
                 {
                     _movePosition.y = 0f;//dung du
                 }
-            }
-            else
-            {
-                _conditions.IsCollidingBelow = false;
             }
         }
     }
@@ -190,9 +199,20 @@ public class HeroController : MonoBehaviour
         _force.x = xForce;
     }
 
+    public void SetVerticalForce(float yForce)
+    {
+        _force.y = yForce;
+    }
+
     private void ApplyGravity()
     {
         _currentGravity = gravity;
+
+        if (_force.y < 0)
+        {
+            _currentGravity *= fallMultiplier; //falling faster when jump
+        }
+
         _force.y += _currentGravity * Time.deltaTime;
     }
     #endregion
