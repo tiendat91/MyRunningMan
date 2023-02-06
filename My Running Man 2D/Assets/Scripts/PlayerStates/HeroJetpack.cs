@@ -10,6 +10,8 @@ public class HeroJetpack : HeroStates
     [SerializeField] private float jetpackForce = 3f;
     [SerializeField] private float jetpackFuel = 5f;
 
+
+
     public float _fuelLeft;
     private float _fuelDurationLeft;
     private bool _stillHaveFuel = true;
@@ -19,6 +21,7 @@ public class HeroJetpack : HeroStates
         base.InitState();
         _fuelDurationLeft = jetpackFuel;
         _fuelLeft = jetpackFuel;
+        UIManagers.Instance.UpdateFuel(_fuelLeft, jetpackFuel); //SINGELETON PATTERN
     }
     protected override void GetInput()
     {
@@ -66,6 +69,9 @@ public class HeroJetpack : HeroStates
         {
             fuelConsumed -= Time.deltaTime;
             _fuelLeft = fuelConsumed;
+
+            UIManagers.Instance.UpdateFuel(_fuelLeft, jetpackFuel); //SINGELETON PATTERN
+
             yield return null;
         }
     }
@@ -78,6 +84,9 @@ public class HeroJetpack : HeroStates
         {
             fuel += Time.deltaTime;
             _fuelLeft = fuel;
+
+            UIManagers.Instance.UpdateFuel(_fuelLeft, jetpackFuel); //SINGELETON PATTERN
+
 
             if (!_stillHaveFuel && fuel > 0.2f)
             {
