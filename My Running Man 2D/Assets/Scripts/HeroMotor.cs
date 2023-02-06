@@ -21,6 +21,7 @@ public class HeroMotor : MonoBehaviour
             {
                 playerState.LocalInput();
                 playerState.ExecuteState();
+                playerState.SetAnimation();
             }
         }
     }
