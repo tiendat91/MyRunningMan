@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeroStates : MonoBehaviour
 {
     protected HeroController _playerController;
+    protected Animator _animator;
     protected float _horizontalInput;
     protected float _verticalInput;
 
@@ -16,6 +17,7 @@ public class HeroStates : MonoBehaviour
     protected virtual void InitState()
     {
         _playerController = GetComponent<HeroController>();
+        _animator = GetComponent<Animator>();
     }
     public virtual void ExecuteState()
     {
@@ -34,4 +36,10 @@ public class HeroStates : MonoBehaviour
     {
 
     }
+
+    protected virtual void SetAnimation()
+    {
+
+    }
+
 }

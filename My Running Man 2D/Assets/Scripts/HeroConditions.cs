@@ -10,6 +10,8 @@ public class HeroConditions : MonoBehaviour
     public bool IsCollidingLeft { get; set; }
     public bool IsFalling { get; set; }
     public bool IsWallCling { get; set; }
+    public bool IsJetPacking { get; set; }
+
 
     public void Reset()
     {
