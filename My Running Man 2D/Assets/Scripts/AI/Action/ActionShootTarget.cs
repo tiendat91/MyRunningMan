@@ -42,7 +42,7 @@ public class ActionShootTarget : AIAction
 
 
             // Update shot time
-            nextShotTime = Time.time + msBetweenShots / 1000f;
+            nextShotTime = Time.time + msBetweenShots / 300f;
         }
     }
 

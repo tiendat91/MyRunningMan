@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 5494f66dc74d00340a72470b6bb8650f, type: 2}
   remainState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
-  firePoint: {fileID: 8717182895061903507, guid: 075aaa606268410419814fd5e88d44c4, type: 3}
+  firePoint: {fileID: 6383672150676737712}
 --- !u!114 &9012349634677875109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   minDistanceToPoint: 0.1
-  points: []
+  points:
+  - {x: 4.95, y: 0, z: 0}
+  - {x: -0.51, y: 0, z: 0}
 --- !u!114 &855705165115222412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7758062271097137657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: -0.34, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
