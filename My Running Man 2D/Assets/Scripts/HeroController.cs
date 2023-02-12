@@ -65,6 +65,8 @@ public class HeroController : MonoBehaviour
         SetRayOrigins();
 
         GetFaceDirection();
+        RotateModel();
+
         if (FacingRight)
         {
             HorizontalCollision(1);
@@ -290,6 +292,18 @@ public class HeroController : MonoBehaviour
             FacingRight = false;
         }
         _internalFaceDirection = _faceDirection;
+    }
+
+    private void RotateModel()
+    {
+        if (FacingRight)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     #endregion

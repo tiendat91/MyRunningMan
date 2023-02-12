@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class HealthDemo : MonoBehaviour
 {
     public static Action<int> OnLifesChanged;
     public static Action<HeroMotor> OnDeath;

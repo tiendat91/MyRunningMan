@@ -11,6 +11,8 @@ public class HeroConditions : MonoBehaviour
     public bool IsFalling { get; set; }
     public bool IsWallCling { get; set; }
     public bool IsJetPacking { get; set; }
+    public bool IsJumping { get; set; }
+
 
 
     public void Reset()

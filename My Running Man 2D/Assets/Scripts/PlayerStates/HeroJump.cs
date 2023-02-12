@@ -8,6 +8,9 @@ public class HeroJump : HeroStates
     [SerializeField] private float jumpHeight = 5f;
     [SerializeField] private int maxJumps = 2;
 
+    private int _jumpAnimationParameter = Animator.StringToHash("Jump");
+    private int _doubleJumpParameter = Animator.StringToHash("DoubleJump");
+    private int _fallAnimatorParameter = Animator.StringToHash("Fall");
     public int JumpLeft { get; set; }
 
     protected override void InitState()
@@ -20,6 +23,7 @@ public class HeroJump : HeroStates
         if (_playerController.Conditions.IsCollidingBelow && _playerController.Force.y == 0f) //standing in the ground
         {
             JumpLeft = maxJumps; //reset number of jump consecutively
+            _playerController.Conditions.IsJumping = false;
         }
     }
     protected override void GetInput()
@@ -44,6 +48,7 @@ public class HeroJump : HeroStates
         JumpLeft -= 1;
         float jumpForce = Mathf.Sqrt(jumpHeight * 2f * Mathf.Abs(_playerController.Gravity));
         _playerController.SetVerticalForce(jumpForce);
+        _playerController.Conditions.IsJumping = true;
     }
 
     private bool CanJump()
@@ -57,5 +62,28 @@ public class HeroJump : HeroStates
             return false;
         }
         return true;
+    }
+
+    public override void SetAnimation()
+    {
+        //Jump
+        _animator.SetBool(_jumpAnimationParameter, _playerController.Conditions.IsJumping
+                && !_playerController.Conditions.IsCollidingBelow
+                && JumpLeft > 0
+                && !_playerController.Conditions.IsFalling
+                && !_playerController.Conditions.IsJetPacking);
+
+        //Double Jump
+        _animator.SetBool(_doubleJumpParameter, _playerController.Conditions.IsJumping
+                && !_playerController.Conditions.IsCollidingBelow
+                && JumpLeft == 0
+                && !_playerController.Conditions.IsFalling
+                && !_playerController.Conditions.IsJetPacking);
+
+        //Fall
+        _animator.SetBool(_fallAnimatorParameter, _playerController.Conditions.IsFalling
+                && _playerController.Conditions.IsJumping
+                && !_playerController.Conditions.IsCollidingBelow
+                && !_playerController.Conditions.IsJetPacking);
     }
 }

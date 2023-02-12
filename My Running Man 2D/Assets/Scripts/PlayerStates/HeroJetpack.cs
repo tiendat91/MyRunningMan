@@ -16,6 +16,8 @@ public class HeroJetpack : HeroStates
     private float _fuelDurationLeft;
     private bool _stillHaveFuel = true;
 
+    private int _jetpackParameter = Animator.StringToHash("Jetpack");
+
     protected override void InitState()
     {
         base.InitState();
@@ -36,7 +38,6 @@ public class HeroJetpack : HeroStates
     }
     private void Update()
     {
-        Debug.Log(_fuelLeft);
     }
 
     private void JetPack()
@@ -94,5 +95,10 @@ public class HeroJetpack : HeroStates
             }
             yield return null;
         }
+    }
+
+    public override void SetAnimation()
+    {
+        _animator.SetBool(_jetpackParameter, _playerController.Conditions.IsJetPacking);
     }
 }

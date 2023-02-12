@@ -25,4 +25,10 @@ public class HeroMotor : MonoBehaviour
             }
         }
     }
+
+    //chuyen vi tri hero den position sau khi dead
+    public void SpawnPlayer(Transform newPosition)
+    {
+        transform.position = newPosition.position;
+    }
 }

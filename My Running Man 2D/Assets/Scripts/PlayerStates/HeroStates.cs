@@ -37,7 +37,7 @@ public class HeroStates : MonoBehaviour
 
     }
 
-    protected virtual void SetAnimation()
+    public virtual void SetAnimation()
     {
 
     }
