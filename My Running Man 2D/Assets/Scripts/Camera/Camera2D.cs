@@ -6,7 +6,6 @@ using UnityEngine;
 public class Camera2D : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private HeroMotor playerToFollow;
     [SerializeField] private bool horizontalFollow = true;
     [SerializeField] private bool verticalFollow = true;
 
@@ -15,21 +14,18 @@ public class Camera2D : MonoBehaviour
     [SerializeField] private float horizontalOffset = 0f;
     [SerializeField] private float horizontalSmoothness = 3f;
 
-    [Header("Horizontal")]
+    [Header("Vertical")]
     [SerializeField][Range(0, 1)] private float verticalInfluence = 1f;
     [SerializeField] private float verticalOffset = 0f;
     [SerializeField] private float verticalSmoothness = 3f;
 
+    public HeroMotor Hero { get; set; }
     public Vector3 TargetPosition { get; set; } //the actual position of hero
     public Vector3 CameraTargetPosition { get; set; } //the position camera know about
 
     private float _targetHorizontalSmoothFollow;
     private float _targetVerticalSmoothFollow;
 
-    private void Awake()
-    {
-        CenterOnTarger(playerToFollow);
-    }
     private void Update()
     {
         MoveCamera();
@@ -37,8 +33,14 @@ public class Camera2D : MonoBehaviour
 
     private void MoveCamera()
     {
+        if (Hero == null)
+        {
+            //stop moving when we dont have a hero/ hero is null
+            return;
+        }
+
         //Calculate position 
-        TargetPosition = GetHeroPosition(playerToFollow);
+        TargetPosition = GetHeroPosition(Hero);
         CameraTargetPosition = new Vector3(TargetPosition.x, TargetPosition.y, 0f);
 
         //Follow on selected axis (true/false)
@@ -84,7 +86,8 @@ public class Camera2D : MonoBehaviour
     //set camera position towards heros position
     private void CenterOnTarger(HeroMotor player)
     {
-        Vector3 targetPosition = GetHeroPosition(player);
+        Hero = player;
+        Vector3 targetPosition = GetHeroPosition(Hero);
 
         //set smooth at the begining start
         _targetHorizontalSmoothFollow = targetPosition.x;
@@ -99,6 +102,30 @@ public class Camera2D : MonoBehaviour
         Gizmos.color = Color.red;
         Vector3 camPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + 2f);
         Gizmos.DrawWireSphere(camPosition, 0.5f);
+    }
+    private void StopFollow(HeroMotor player)
+    {
+        Hero = null;
+    }
+
+    private void StartFollow(HeroMotor player)
+    {
+        Hero = player;
+        CenterOnTarger(Hero);
+    }
+
+    private void OnEnable()
+    {
+        LevelManager.OnPlayerSpawn += CenterOnTarger;
+        Health.OnDeath += StopFollow;
+        Health.OnRevive += StartFollow;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.OnPlayerSpawn -= CenterOnTarger;
+        Health.OnDeath -= StopFollow;
+        Health.OnRevive -= StartFollow;
     }
 
 }
