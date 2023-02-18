@@ -62026,12 +62026,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 130755477357957992, guid: 366107ed623c1df44ac11efbb3db96d5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6608814
+      objectReference: {fileID: 0}
+    - target: {fileID: 130755477357957992, guid: 366107ed623c1df44ac11efbb3db96d5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.277979
+      objectReference: {fileID: 0}
+    - target: {fileID: 130755477357957992, guid: 366107ed623c1df44ac11efbb3db96d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0514302
+      value: -1.6525
       objectReference: {fileID: 0}
     - target: {fileID: 130755477357957992, guid: 366107ed623c1df44ac11efbb3db96d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.2372837
+      value: -4.3516
       objectReference: {fileID: 0}
     - target: {fileID: 130755477357957992, guid: 366107ed623c1df44ac11efbb3db96d5, type: 3}
       propertyPath: m_LocalPosition.z
