@@ -13,6 +13,32 @@ public class UIManagers : Singleton<UIManagers>
     private float _currentJetpackFuel;
     private float _jetpackFuel;
 
+    //private Stack<Color> colorStack = new Stack<Color>();
+    //private SpriteRenderer renderer;
+
+    //private void Start()
+    //{
+    //    renderer = GetComponent<SpriteRenderer>();
+    //    colorStack.Push(renderer.color);
+    //}
+
+    //public void UseMana()
+    //{
+    //    Color newColor = renderer.color;
+    //    newColor.r -= 0.1f;
+    //    newColor.g -= 0.1f;
+    //    renderer.color = newColor;
+    //    colorStack.Push(newColor);
+    //}
+
+    //public void GainMana()
+    //{
+    //    if (colorStack.Count > 0)
+    //    {
+    //        renderer.color = colorStack.Pop();
+    //    }
+    //}
+
 
     // Start is called before the first frame update
     void Update()
