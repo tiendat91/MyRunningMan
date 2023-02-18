@@ -7,7 +7,7 @@ public class HeroController : MonoBehaviour
     #region Internal
     private BoxCollider2D _boxCollider2D;
     private HeroConditions _conditions;
-
+    private MovingPlatform _movingPlatform;
     private Vector2 _boundsTopLeft;
     private Vector2 _boundsTopRight;
     private Vector2 _boundsBottomLeft;
@@ -269,6 +269,29 @@ public class HeroController : MonoBehaviour
     public void SeteWallClingMultiplier(float fallM)
     {
         _wallFallMultiplier = fallM;
+    }
+
+    #endregion
+
+    #region Moving Platform
+
+    private void EnterPlatformMovement()
+    {
+        if (_movingPlatform == null)
+        {
+            return;
+        }
+
+        if (_movingPlatform.CollidingWithPlayer)
+        {
+            if (_movingPlatform.MoveSpeed != 0)
+            {
+                Vector3 moveDirection = _movingPlatform.Direction == PathFollow.MoveDirections.RIGHT
+                    ? Vector3.right
+                    : Vector3.left;
+                transform.Translate(moveDirection * _movingPlatform.MoveSpeed * Time.deltaTime);
+            }
+        }
     }
 
     #endregion

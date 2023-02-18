@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0074b6dfa05e3d2488ae09e1b5b82f79, type: 3}
+  m_Name: PigStateFollowPath
+  m_EditorClassIdentifier: 
+  Actions:
+  - {fileID: 11400000, guid: 486062c2e587026459b645ea7a2540d3, type: 2}
+  - {fileID: 11400000, guid: cb6f147b310bb1942a83bb30a42ae40e, type: 2}
+  Transitions:
+  - Decision: {fileID: 11400000, guid: 428b3d8b10d448042ba58eeef81675cc, type: 2}
+    TrueState: {fileID: 11400000, guid: 87ef3854a0e2080449d17610b6728df4, type: 2}
+    FalseState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
