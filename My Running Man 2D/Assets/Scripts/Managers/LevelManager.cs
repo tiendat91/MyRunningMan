@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    public static Action<HeroMotor> OnPlayerSpawn;
+
     [Header("Settings")]
     [SerializeField] private Transform levelStartPoint;
     [SerializeField] private GameObject playerPrefab;
@@ -29,6 +32,9 @@ public class LevelManager : MonoBehaviour
         {
             _currentPlayer = Instantiate(player, levelStartPoint.position, Quaternion.identity).GetComponent<HeroMotor>();
             _currentPlayer.GetComponent<Health>().ResetLife();
+
+            //Call Event when Spawn
+            OnPlayerSpawn?.Invoke(_currentPlayer);
         }
     }
 
@@ -40,6 +46,7 @@ public class LevelManager : MonoBehaviour
             _currentPlayer.gameObject.SetActive(true);
             _currentPlayer.SpawnPlayer(levelStartPoint); //chuyen nhan vat den vi tri moi
             _currentPlayer.GetComponent<Health>().ResetLife(); //reset lai UI heart tren man hinh
+            _currentPlayer.GetComponent<Health>().Revive();
         }
     }
 

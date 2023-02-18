@@ -75,4 +75,9 @@ public class Health : MonoBehaviour
     }
 
     ///////////////////////////////////////////
+
+    public void Revive()
+    {
+        OnRevive?.Invoke(gameObject.GetComponent<HeroMotor>());
+    }
 }
