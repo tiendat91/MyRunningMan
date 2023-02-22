@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b3b2d890f5d1aca48a7ba8cca3265a43
+guid: 75829f6eb127af84882ed1c519f5773c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blink (54x52)_0
+      name: Brick1_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 4
-        width: 43
-        height: 43
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3d68c851ec64cd46bc1420acd2d3aea
-      internalID: 790710293
+      spriteID: a7ba3c2fa32405c439937487f068c9e5
+      internalID: 363569712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_1
+      name: Brick1_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 4
-        width: 43
-        height: 43
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 101b0e41d31058d4bb59a4b837e3c533
-      internalID: 1796484156
+      spriteID: 7c4ff0909cd167144b306995f41c190a
+      internalID: 1168022857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_2
+      name: Brick1_2
       rect:
         serializedVersion: 2
-        x: 114
-        y: 4
-        width: 43
-        height: 43
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5866b1dc87633045a3af77392b2d054
-      internalID: 1036236178
+      spriteID: c56113638524e9240bfb54c258d4b2e4
+      internalID: -585669055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_3
+      name: Brick1_3
       rect:
         serializedVersion: 2
-        x: 168
-        y: 4
-        width: 43
-        height: 43
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58cd4e66ac134f040ab65b9483a26f68
-      internalID: 1388125147
+      spriteID: e46f7b0133f774f43adf539f3d239d5e
+      internalID: -1869651607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brick1_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f658c0ad0aac9d444979a757f417d00a
+      internalID: -1172945960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brick1_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d178fccbdc9d8c46b390a4243cc9263
+      internalID: 527452602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brick1_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875c9047ee9d8534d909ac419abab93d
+      internalID: -171790162
       vertices: []
       indices: 
       edges: []
@@ -199,10 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blink (54x52)_3: 1388125147
-      Blink (54x52)_0: 790710293
-      Blink (54x52)_2: 1036236178
-      Blink (54x52)_1: 1796484156
+      Brick1_6: -171790162
+      Brick1_0: 363569712
+      Brick1_3: -1869651607
+      Brick1_2: -585669055
+      Brick1_4: -1172945960
+      Brick1_5: 527452602
+      Brick1_1: 1168022857
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
