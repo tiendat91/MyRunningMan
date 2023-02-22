@@ -53,6 +53,7 @@ public class Health : MonoBehaviour
             OnDeath?.Invoke(gameObject.GetComponent<HeroMotor>());
         }
         UpdatelifesUI();
+        Debug.Log(_currentlifes);
     }
 
     public void ResetLife()

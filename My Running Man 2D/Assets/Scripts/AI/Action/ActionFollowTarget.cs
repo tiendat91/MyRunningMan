@@ -8,7 +8,7 @@ public class ActionFollowTarget : AIAction
 {
     public float followSpeed = 6f;
     public float minDistanceToTarget = 0.2f;
-    
+
     public override void Act(StateController controller)
     {
         FollowTarget(controller);

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac389978a949d1243af1f6e36542a854, type: 3}
-  m_Name: PigDecisionLineDetection
+  m_Name: DecisionLineDetection
   m_EditorClassIdentifier: 
   playerMask:
     serializedVersion: 2
     m_Bits: 128
-  rayLenght: 4
+  rayLenght: 3
