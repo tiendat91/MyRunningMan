@@ -86,4 +86,20 @@ public class HeroJump : HeroStates
                 && !_playerController.Conditions.IsCollidingBelow
                 && !_playerController.Conditions.IsJetPacking);
     }
+
+    private void JumpResponse(float jump)
+    {
+        _playerController.SetVerticalForce(Mathf.Sqrt(2f * jump * Mathf.Abs(_playerController.Gravity)));
+    }
+
+    //Collide with Jumper
+    private void OnEnable()
+    {
+        Jumper.OnJump += JumpResponse;
+    }
+
+    private void OnDisable()
+    {
+        Jumper.OnJump -= JumpResponse;
+    }
 }
