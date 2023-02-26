@@ -103,8 +103,16 @@ public class Menu : MonoBehaviour
         SnailTalk.text = s;
     }
 
-    public void LinkContact()
+    public void LinkContact(int options)
     {
-        Application.OpenURL("https://www.facebook.com/datdat910");
+        switch (options)
+        {
+            case 0:
+                Application.OpenURL("https://www.facebook.com/datdat910");
+                break;
+            case 1:
+                Application.OpenURL("https://tiendat91.itch.io");
+                break;
+        }
     }
 }
