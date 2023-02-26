@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Timers;
 using TMPro;
 using UnityEngine;
 
@@ -11,15 +14,20 @@ public class Menu : MonoBehaviour
     [SerializeField] public GameObject[] panels;
     [SerializeField] public AudioSource _audio;
     [SerializeField] public TextMeshProUGUI SnailTalk;
+    [SerializeField] private TextAsset _textAsset;
+    [SerializeField] private TextMeshProUGUI _scoreBoard;
 
-    private Account _account;
+    private List<Account> accounts = new List<Account>();
+    private List<Account> top10HighScore = new List<Account>();
     private string _currentName;
     private string _currentPassword;
     private string _currentConfirmPassword;
 
+
     void Start()
     {
-        _account = GetComponent<Account>();
+        ReadData();
+        GetHighScore();
 
         foreach (var panel in panels)
         {
@@ -113,6 +121,35 @@ public class Menu : MonoBehaviour
             case 1:
                 Application.OpenURL("https://tiendat91.itch.io");
                 break;
+        }
+    }
+
+    public void ReadData()
+    {
+        string[] data = _textAsset.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
+        int NumberOfPropertiesInData = typeof(Account).GetProperties().Length;
+        int tableSize = data.Length / NumberOfPropertiesInData - 1;
+        for (int i = 0; i < tableSize; i++)
+        {
+            accounts.Add(new Account()
+            {
+                Name = data[NumberOfPropertiesInData],
+                Password = data[NumberOfPropertiesInData + 1],
+                Score = Int32.Parse(data[NumberOfPropertiesInData + 2]),
+                NumberOfDeath = Int32.Parse(data[NumberOfPropertiesInData + 3]),
+                TimePLaying = float.Parse(data[NumberOfPropertiesInData + 4]),
+            });
+        }
+    }
+
+    public void GetHighScore()
+    {
+        top10HighScore.AddRange(accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(10).ToList());
+        int count = 0;
+        _scoreBoard.text = "";
+        foreach (var item in top10HighScore)
+        {
+            _scoreBoard.text += $"Top {++count}:" + item.Name + ", " + item.TimePLaying + "\n";
         }
     }
 }

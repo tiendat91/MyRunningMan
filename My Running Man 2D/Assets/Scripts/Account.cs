@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
-public class Account : MonoBehaviour
+public class Account
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string Name { get; set; }
+    public string Password { get; set; }
+    public int Score { get; set; }
+    public int NumberOfDeath { get; set; }
+    public float TimePLaying { get; set; }
 }
