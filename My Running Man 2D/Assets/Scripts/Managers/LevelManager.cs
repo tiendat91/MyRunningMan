@@ -26,6 +26,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        //Call Event when Spawn
+        OnPlayerSpawn?.Invoke(_currentPlayer);
+    }
+
     private void SpawnPlayer(GameObject player)
     {
         if (player != null)
@@ -33,8 +39,7 @@ public class LevelManager : MonoBehaviour
             _currentPlayer = Instantiate(player, levelStartPoint.position, Quaternion.identity).GetComponent<HeroMotor>();
             _currentPlayer.GetComponent<Health>().ResetLife();
 
-            //Call Event when Spawn
-            OnPlayerSpawn?.Invoke(_currentPlayer);
+
         }
     }
 

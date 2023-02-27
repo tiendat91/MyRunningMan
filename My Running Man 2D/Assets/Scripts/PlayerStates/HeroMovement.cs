@@ -30,6 +30,10 @@ public class HeroMovement : HeroStates
         }
 
         float moveSpeed = _movement * speed;
+
+        //Calculate character's speed when collide with special surfaces
+        moveSpeed = EvaluateFriction(moveSpeed);
+
         _playerController.SetHorizontalForce(moveSpeed);
     }
 
@@ -44,5 +48,17 @@ public class HeroMovement : HeroStates
         _animator.SetBool(_idleAnimatorParameter, _horizontalMovement == 0 && _playerController.Conditions.IsCollidingBelow);
         //call when pressing left/right key and moving
         _animator.SetBool(_runAnimatorParameter, Mathf.Abs(_horizontalInput) > 0.1f && _playerController.Conditions.IsCollidingBelow);
+    }
+
+    //Calculate character's speed when collide with special surfaces
+    private float EvaluateFriction(float moveSpeed)
+    {
+        if (_playerController.Friction > 0)
+        {
+            moveSpeed = Mathf.Lerp(_playerController.Force.x, moveSpeed
+                , Time.deltaTime * 10f * _playerController.Friction);
+        }
+
+        return moveSpeed;
     }
 }

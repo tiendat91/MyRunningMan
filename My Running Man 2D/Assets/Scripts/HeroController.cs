@@ -45,6 +45,8 @@ public class HeroController : MonoBehaviour
     public float Gravity => gravity;
     public Vector2 Force => _force;
     public HeroConditions Conditions => _conditions;
+
+    public float Friction { get; set; }
     #endregion
 
 
@@ -97,6 +99,9 @@ public class HeroController : MonoBehaviour
     #region Collision Below
     private void CollisionBelow()
     {
+        //reset lai friction khi nhan vat ko collide with special surface
+        Friction = 0f;
+
         if (_movePosition.y < -0.0001f) //trang thai falling
         {
             _conditions.IsFalling = true;
@@ -133,6 +138,8 @@ public class HeroController : MonoBehaviour
             Debug.DrawRay(rayOrigin, -transform.up * rayLength, Color.green);
             if (hit)//khi raycast cham vat can
             {
+                GameObject hitObject = hit.collider.gameObject;
+
                 if (_force.y > 0)
                 {
                     _movePosition.y = _force.y * Time.deltaTime;
@@ -148,6 +155,12 @@ public class HeroController : MonoBehaviour
                 if (Mathf.Abs(_movePosition.y) < 0.0001f)
                 {
                     _movePosition.y = 0f;//dung du
+                }
+
+                //collide with special surfaces
+                if (hitObject.GetComponent<SpecialSurface>() != null)
+                {
+                    Friction = hitObject.GetComponent<SpecialSurface>().Friction;
                 }
             }
         }
@@ -242,6 +255,12 @@ public class HeroController : MonoBehaviour
     public void SetHorizontalForce(float xForce)
     {
         _force.x = xForce;
+    }
+
+    // Speed up hero in special surface
+    public void AddHorizontalMovement(float xForce)
+    {
+        _force.x += xForce;
     }
 
     public void SetVerticalForce(float yForce)
