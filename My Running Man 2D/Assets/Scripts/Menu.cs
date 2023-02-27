@@ -16,13 +16,13 @@ public class Menu : MonoBehaviour
     [SerializeField] public TextMeshProUGUI SnailTalk;
     [SerializeField] private TextAsset _textAsset;
     [SerializeField] private TextMeshProUGUI _scoreBoard;
+    [SerializeField] private TextMeshProUGUI _timeBoard;
 
     private List<Account> accounts = new List<Account>();
     private List<Account> top10HighScore = new List<Account>();
     private string _currentName;
     private string _currentPassword;
     private string _currentConfirmPassword;
-
 
     void Start()
     {
@@ -129,27 +129,32 @@ public class Menu : MonoBehaviour
         string[] data = _textAsset.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
         int NumberOfPropertiesInData = typeof(Account).GetProperties().Length;
         int tableSize = data.Length / NumberOfPropertiesInData - 1;
-        for (int i = 0; i < tableSize; i++)
+        for (int i = 5; i < data.Length - 5; i += 5)
         {
             accounts.Add(new Account()
             {
-                Name = data[NumberOfPropertiesInData],
-                Password = data[NumberOfPropertiesInData + 1],
-                Score = Int32.Parse(data[NumberOfPropertiesInData + 2]),
-                NumberOfDeath = Int32.Parse(data[NumberOfPropertiesInData + 3]),
-                TimePLaying = float.Parse(data[NumberOfPropertiesInData + 4]),
+                Name = data[i],
+                Password = data[i + 1],
+                Score = Int32.Parse(data[i + 2]),
+                NumberOfDeath = Int32.Parse(data[i + 3]),
+                TimePLaying = float.Parse(data[i + 4]),
             });
         }
     }
 
     public void GetHighScore()
     {
-        top10HighScore.AddRange(accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(10).ToList());
+        //top10HighScore.Add(accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(10).ToList());
         int count = 0;
         _scoreBoard.text = "";
-        foreach (var item in top10HighScore)
+        _timeBoard.text = "";
+
+
+        foreach (var item in accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(10).ToList())
         {
-            _scoreBoard.text += $"Top {++count}:" + item.Name + ", " + item.TimePLaying + "\n";
+            _scoreBoard.text += $"Top {++count}:" + item.Name + "\n";
+            _timeBoard.text += TimeSpan.FromSeconds(item.TimePLaying).ToString("hh':'mm':'ss") + "\n";
         }
     }
+
 }

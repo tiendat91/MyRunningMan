@@ -49,9 +49,13 @@ public class HeroController : MonoBehaviour
     public float Friction { get; set; }
     #endregion
 
+    private SpriteRenderer _sprite;
 
     void Start()
     {
+        _sprite = gameObject.GetComponent<SpriteRenderer>();
+        _sprite.color = Color.red;
+
         _boxCollider2D = GetComponent<BoxCollider2D>();
 
         //set trang trai collision va falling
