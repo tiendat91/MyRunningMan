@@ -116,12 +116,9 @@ public class Menu : MonoBehaviour
                 SceneManager.LoadScene("Loading");
                 ChangeSnailTaking("LOGIN SUCCESS!");
             }
-            else
-            {
-                ChangeSnailTaking("LOGIN FAIL!");
-
-            }
         }
+        ChangeSnailTaking("LOGIN FAIL!");
+
     }
 
     public void ChangeSnailTaking(string s)
