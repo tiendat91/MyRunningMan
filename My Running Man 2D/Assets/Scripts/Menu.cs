@@ -6,6 +6,7 @@ using System.Linq;
 using System.Timers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -20,9 +21,9 @@ public class Menu : MonoBehaviour
 
     private List<Account> accounts = new List<Account>();
     private List<Account> top10HighScore = new List<Account>();
-    private string _currentName;
-    private string _currentPassword;
-    private string _currentConfirmPassword;
+    private static string _currentName;
+    private static string _currentPassword;
+    private static string _currentConfirmPassword;
 
     void Start()
     {
@@ -102,8 +103,21 @@ public class Menu : MonoBehaviour
 
     public void LogInAccount()
     {
-        Debug.Log(_currentName + " " + _currentPassword);
-        ChangeSnailTaking("NOT FOUND ACCOUNT");
+        foreach(var acc in accounts)
+        {
+            if(acc.Name ==  _currentName && acc.Password == _currentPassword)
+            {
+                SceneManager.LoadScene("Loading");
+                ChangeSnailTaking("LOGIN SUCCESS!");
+                Debug.Log(_currentName + " " + _currentPassword);
+            }
+            else
+            {
+                ChangeSnailTaking("LOGIN FAIL!");
+                Debug.Log(_currentName + " " + _currentPassword);
+
+            }
+        }
     }
 
     public void ChangeSnailTaking(string s)
@@ -149,8 +163,7 @@ public class Menu : MonoBehaviour
         _scoreBoard.text = "";
         _timeBoard.text = "";
 
-
-        foreach (var item in accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(10).ToList())
+        foreach (var item in accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(5).ToList())
         {
             _scoreBoard.text += $"Top {++count}:" + item.Name + "\n";
             _timeBoard.text += TimeSpan.FromSeconds(item.TimePLaying).ToString("hh':'mm':'ss") + "\n";
