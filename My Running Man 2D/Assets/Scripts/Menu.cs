@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Enumeration;
 using System.Linq;
 using System.Timers;
 using TMPro;
@@ -19,17 +20,19 @@ public class Menu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreBoard;
     [SerializeField] private TextMeshProUGUI _timeBoard;
 
-    private List<Account> accounts = new List<Account>();
-    private List<Account> top10HighScore = new List<Account>();
+    private static List<Account> accounts = new List<Account>();
+    private static List<Account> top10HighScore = new List<Account>();
     private static string _currentName;
     private static string _currentPassword;
     private static string _currentConfirmPassword;
+    private string fileName = null;
 
     void Start()
     {
+        Time.timeScale = 1f;
         ReadData();
         GetHighScore();
-
+        fileName = Application.dataPath + "/Data/Account_Player.csv";
         foreach (var panel in panels)
         {
             panel.SetActive(false);
@@ -83,10 +86,13 @@ public class Menu : MonoBehaviour
     public void TypingName(string n)
     {
         _currentName = n.ToLower().Trim();
+        Debug.Log(_currentName);
+
     }
     public void TypingPassword(string p)
     {
         _currentPassword = p.ToLower().Trim();
+        Debug.Log(_currentPassword);
     }
     public void TypingConfirmPassword(string cf)
     {
@@ -109,12 +115,10 @@ public class Menu : MonoBehaviour
             {
                 SceneManager.LoadScene("Loading");
                 ChangeSnailTaking("LOGIN SUCCESS!");
-                Debug.Log(_currentName + " " + _currentPassword);
             }
             else
             {
                 ChangeSnailTaking("LOGIN FAIL!");
-                Debug.Log(_currentName + " " + _currentPassword);
 
             }
         }
@@ -168,6 +172,72 @@ public class Menu : MonoBehaviour
             _scoreBoard.text += $"Top {++count}:" + item.Name + "\n";
             _timeBoard.text += TimeSpan.FromMinutes(item.TimePLaying).ToString("hh':'mm':'ss") + "\n";
         }
+    }
+
+    public void WriteData()
+    {
+        try
+        {
+            TextWriter tw = new StreamWriter(fileName,false);
+            tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying");
+            foreach (var acc in accounts)
+            {
+                tw.WriteLine(acc.Name + "," + acc.Password + ","
+                    + acc.Score + "," + acc.NumberOfDeath + ","
+                    + acc.TimePLaying);
+            }
+            tw.Close();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    public void RegisterAccount(GameObject loginMenu)
+    {
+        if(_currentName == null)
+        {
+            return;
+        }
+        if (_currentPassword == null)
+        {
+            return;
+        }
+        if (_currentConfirmPassword == null)
+        {
+            return;
+        }
+        if (_currentConfirmPassword != _currentPassword)
+        {
+            return;
+        }
+
+        //checking duplicate name
+        foreach (var acc in accounts)
+        {
+            if(acc.Name == _currentName)
+            {
+                ChangeSnailTaking("DUPLICATE NAME!");
+                return;
+            }
+        }
+
+        accounts.Add(new Account()
+        {
+            Name = _currentName,
+            Password = _currentPassword,
+            Score = 0,
+            NumberOfDeath = 0,
+            TimePLaying = 0,
+        });
+
+        WriteData();
+        ReadData();
+        ChangeSnailTaking("REGISTER SUCCESS!");
+        Debug.Log("Login Success");
+        ChangetoOtherMenu(loginMenu);
     }
 
 }

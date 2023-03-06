@@ -879,6 +879,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1353132379}
     m_Modifications:
+    - target: {fileID: 5844744420619995557, guid: fd2c08e380f47384384c4e8dc5d8ba2d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9d7975e4ffa9caa42ae932a6cb99d540, type: 2}
     - target: {fileID: 6842995086116585675, guid: fd2c08e380f47384384c4e8dc5d8ba2d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -926,6 +930,10 @@ PrefabInstance:
     - target: {fileID: 7133115645477377328, guid: fd2c08e380f47384384c4e8dc5d8ba2d, type: 3}
       propertyPath: m_Name
       value: Jumper
+      objectReference: {fileID: 0}
+    - target: {fileID: 7379087775189258042, guid: fd2c08e380f47384384c4e8dc5d8ba2d, type: 3}
+      propertyPath: jumpHeight
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd2c08e380f47384384c4e8dc5d8ba2d, type: 3}
