@@ -7495,6 +7495,7 @@ MonoBehaviour:
   SnailTalk: {fileID: 2044471016}
   _textAsset: {fileID: 4900000, guid: 4a78e027011f3ea47af17de2f44b833f, type: 3}
   _scoreBoard: {fileID: 1146914772}
+  _timeBoard: {fileID: 0}
 --- !u!4 &1604582491
 Transform:
   m_ObjectHideFlags: 0
@@ -7950,7 +7951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1646257566
 RectTransform:
   m_ObjectHideFlags: 0
