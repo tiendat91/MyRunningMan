@@ -144,7 +144,7 @@ public class Menu : MonoBehaviour
         string[] data = _textAsset.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
         int NumberOfPropertiesInData = typeof(Account).GetProperties().Length;
         int tableSize = data.Length / NumberOfPropertiesInData - 1;
-        for (int i = 5; i < data.Length - 5; i += 5)
+        for (int i = NumberOfPropertiesInData; i < data.Length - NumberOfPropertiesInData; i += NumberOfPropertiesInData)
         {
             accounts.Add(new Account()
             {
@@ -153,6 +153,12 @@ public class Menu : MonoBehaviour
                 Score = Int32.Parse(data[i + 2]),
                 NumberOfDeath = Int32.Parse(data[i + 3]),
                 TimePLaying = float.Parse(data[i + 4]),
+                Level1 = float.Parse(data[i + 5]),
+                Level2 = float.Parse(data[i + 6]),
+                Level3 = float.Parse(data[i + 7]),
+                Level4 = float.Parse(data[i + 8]),
+                Level5 = float.Parse(data[i + 9]),
+                Level6 = float.Parse(data[i + 10]),
             });
         }
     }
@@ -176,12 +182,15 @@ public class Menu : MonoBehaviour
         try
         {
             TextWriter tw = new StreamWriter(fileName,false);
-            tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying");
+            tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6");
             foreach (var acc in accounts)
             {
                 tw.WriteLine(acc.Name + "," + acc.Password + ","
                     + acc.Score + "," + acc.NumberOfDeath + ","
-                    + acc.TimePLaying);
+                    + acc.TimePLaying + "," + acc.Level1 + ","
+                    + acc.Level2 + "," + acc.Level3 + ","
+                    + acc.Level4 + "," + acc.Level5 + ","
+                    + acc.Level6);
             }
             tw.Close();
         }

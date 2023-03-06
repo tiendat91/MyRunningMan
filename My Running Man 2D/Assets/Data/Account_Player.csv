@@ -1,6 +1,8 @@
-Name,Password,Score,NumberOfDeath,TimePlaying
-kha,123,0,0,0
-huy,123,0,0,0
-huy2,123,0,0,0
-dat,123,0,0,0
-linh,123,0,0,0
+Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6
+kha,123,0,0,0,1,1,1,1,1,1
+huy,123,0,0,0,2,2,2,2,2,2
+huy2,123,0,0,0,3,3,3,3,3,3
+dat,123,0,0,0,4,4,4,4,4,4
+linh,123,0,0,0,5,5,5,5,5,5
+binh,123,0,0,0,0,0,0,0,0,0
+trang,123,0,0,0,0,0,0,0,0,0
