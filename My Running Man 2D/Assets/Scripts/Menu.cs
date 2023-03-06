@@ -166,7 +166,7 @@ public class Menu : MonoBehaviour
         foreach (var item in accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(5).ToList())
         {
             _scoreBoard.text += $"Top {++count}:" + item.Name + "\n";
-            _timeBoard.text += TimeSpan.FromSeconds(item.TimePLaying).ToString("hh':'mm':'ss") + "\n";
+            _timeBoard.text += TimeSpan.FromMinutes(item.TimePLaying).ToString("hh':'mm':'ss") + "\n";
         }
     }
 
