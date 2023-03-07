@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8527243798302381323}
   - component: {fileID: 6223890388228530288}
   - component: {fileID: -8271923059536304845}
+  - component: {fileID: 7528784737294943345}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635953d5366118a46a5ab50907f2c4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: 55a602b48726df947b3ef866600fa4d9, type: 2}
+  currentState: {fileID: 11400000, guid: 1c2d36ebbff293c42ac3918cceaa6825, type: 2}
   remainState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
   firePoint: {fileID: 608084021667173520}
 --- !u!114 &6223890388228530288
@@ -233,3 +234,18 @@ MonoBehaviour:
   objectPrefab: {fileID: 6578678730186909044, guid: beb519a20328ec44fb8f02d8de033227, type: 3}
   poolSize: 10
   poolCanExpand: 1
+--- !u!114 &7528784737294943345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587158274425252963}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbde773cd6255f429ba413937499bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  minDistanceToPoint: 0.1
+  points: []
