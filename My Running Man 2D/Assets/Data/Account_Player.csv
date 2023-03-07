@@ -1,8 +1,8 @@
-﻿Name,Password,Score,NumberOfDeath,TimePlaying
-dat4567,123,0,0,1
-dung,123,0,0,2
-long,123,0,0,123
-huyen,123,0,0,32
-quang,123,0,0,4
-minh,123,0,0,122
-le,123,0,0,53
+Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6
+kha,123,0,0,0,1,1,1,1,1,1
+huy,123,0,0,0,2,2,2,2,2,2
+huy2,123,0,0,0,3,3,3,3,3,3
+dat,123,0,0,0,4,4,4,4,4,4
+linh,123,0,0,0,5,5,5,5,5,5
+binh,123,0,0,0,0,0,0,0,0,0
+trang,123,0,0,0,0,0,0,0,0,0
