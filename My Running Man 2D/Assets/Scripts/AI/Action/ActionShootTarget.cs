@@ -34,12 +34,12 @@ public class ActionShootTarget : AIAction
             ghostProjectile.transform.position = controller.FirePoint.position;
             ghostProjectile.SetActive(true);
 
+
             // Get projectile reference
             Projectile newProjectile = ghostProjectile.GetComponent<Projectile>();
-            newProjectile.SetDirection(new Vector3(normalizeDirToTarget.x, normalizeDirToTarget.y, 0f));
+            newProjectile.SetDirection(new Vector3(normalizeDirToTarget.x, normalizeDirToTarget.y, 0f), controller.FirePoint.position);
+
             newProjectile.EnableProjectile();
-
-
 
             // Update shot time
             nextShotTime = Time.time + msBetweenShots / 300f;

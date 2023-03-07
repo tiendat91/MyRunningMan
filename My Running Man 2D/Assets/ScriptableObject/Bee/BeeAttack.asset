@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0074b6dfa05e3d2488ae09e1b5b82f79, type: 3}
-  m_Name: ChameleonAttack
+  m_Name: BeeAttack
   m_EditorClassIdentifier: 
   Actions:
-  - {fileID: 11400000, guid: 8adf75723bc9382408ae6cf8d4ef1fa8, type: 2}
+  - {fileID: 11400000, guid: 6c3f658707364cf49bb7dbcc33b1c976, type: 2}
+  - {fileID: 11400000, guid: 1b2717cabb0148844b9682ab8a7aa196, type: 2}
   Transitions:
-  - Decision: {fileID: 11400000, guid: 5c88fa7bd2d10b448a50221934704511, type: 2}
+  - Decision: {fileID: 11400000, guid: 1c4695052cabc3745b8fe67dc9b93629, type: 2}
     TrueState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
-    FalseState: {fileID: 11400000, guid: ec445aa8aac0bff4baffcf0879bb18fa, type: 2}
+    FalseState: {fileID: 11400000, guid: a12efb60fab234c468b26a0d391d6082, type: 2}

@@ -239,7 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 3
-  _currentlifes: 0
 --- !u!114 &8920273721376858951
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0074b6dfa05e3d2488ae09e1b5b82f79, type: 3}
-  m_Name: ChameleonAttack
+  m_Name: BatFollowPath
   m_EditorClassIdentifier: 
   Actions:
-  - {fileID: 11400000, guid: 8adf75723bc9382408ae6cf8d4ef1fa8, type: 2}
-  Transitions:
-  - Decision: {fileID: 11400000, guid: 5c88fa7bd2d10b448a50221934704511, type: 2}
-    TrueState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
-    FalseState: {fileID: 11400000, guid: ec445aa8aac0bff4baffcf0879bb18fa, type: 2}
+  - {fileID: 11400000, guid: 482879f2a63a3934faaca38a3ab66993, type: 2}
+  - {fileID: 11400000, guid: 40d7b4c8481602e48847b3a473f08d8f, type: 2}
+  Transitions: []

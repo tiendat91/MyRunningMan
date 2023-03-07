@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0074b6dfa05e3d2488ae09e1b5b82f79, type: 3}
-  m_Name: ChameleonAttack
+  m_Name: PlantNotMove
   m_EditorClassIdentifier: 
   Actions:
-  - {fileID: 11400000, guid: 8adf75723bc9382408ae6cf8d4ef1fa8, type: 2}
+  - {fileID: 11400000, guid: bcccba22de9b213489fff7c31721962d, type: 2}
   Transitions:
-  - Decision: {fileID: 11400000, guid: 5c88fa7bd2d10b448a50221934704511, type: 2}
-    TrueState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
-    FalseState: {fileID: 11400000, guid: ec445aa8aac0bff4baffcf0879bb18fa, type: 2}
+  - Decision: {fileID: 11400000, guid: 3da3b6e016d842f428ab2e611717fba3, type: 2}
+    TrueState: {fileID: 11400000, guid: 55a602b48726df947b3ef866600fa4d9, type: 2}
+    FalseState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
