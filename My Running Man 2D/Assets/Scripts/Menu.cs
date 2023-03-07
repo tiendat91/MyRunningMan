@@ -8,12 +8,14 @@ using System.Timers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("Settings")]
     [SerializeField] public GameObject[] panels;
+    [SerializeField] public Button[] buttons;
     [SerializeField] public AudioSource _audio;
     [SerializeField] public TextMeshProUGUI SnailTalk;
     [SerializeField] private TextAsset _textAsset;
@@ -21,11 +23,13 @@ public class Menu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timeBoard;
 
     private static List<Account> accounts = new List<Account>();
-    private static List<Account> top10HighScore = new List<Account>();
+    private Account _currentAccount;
+    private static List<Account> top5HighScore = new List<Account>();
     private static string _currentName;
     private static string _currentPassword;
     private static string _currentConfirmPassword;
     private string fileName = null;
+    public static int selectedLevel;
 
     void Start()
     {
@@ -107,14 +111,17 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void LogInAccount()
+    public void LogInAccount(GameObject levelMenu)
     {
         foreach(var acc in accounts)
         {
             if(acc.Name ==  _currentName && acc.Password == _currentPassword)
             {
-                SceneManager.LoadScene("Loading");
+                _currentAccount = acc;
                 ChangeSnailTaking("LOGIN SUCCESS!");
+                ChangetoOtherMenu(levelMenu);
+                DisplayLevel();
+                return;
             }
         }
         ChangeSnailTaking("LOGIN FAIL!");
@@ -152,29 +159,43 @@ public class Menu : MonoBehaviour
                 Password = data[i + 1],
                 Score = Int32.Parse(data[i + 2]),
                 NumberOfDeath = Int32.Parse(data[i + 3]),
-                TimePLaying = float.Parse(data[i + 4]),
                 Level1 = float.Parse(data[i + 5]),
                 Level2 = float.Parse(data[i + 6]),
                 Level3 = float.Parse(data[i + 7]),
                 Level4 = float.Parse(data[i + 8]),
                 Level5 = float.Parse(data[i + 9]),
                 Level6 = float.Parse(data[i + 10]),
+
+                TimePLaying = float.Parse(data[i + 5]) 
+                + float.Parse(data[i + 6]) 
+                + float.Parse(data[i + 7]) 
+                + float.Parse(data[i + 8]) 
+                + float.Parse(data[i + 9]) 
+                + float.Parse(data[i + 10])
+
             });
         }
     }
 
     public void GetHighScore()
     {
-        //top10HighScore.Add(accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(10).ToList());
+        //TOP 5 NGUOI CHOI: HOAN THANG 6 MAN TRONG THOI GIAN NHANH NHAT
+        top5HighScore = accounts.AsQueryable().Where(x => x.Level6 > 0).OrderBy(x => x.TimePLaying).ToList();
+
         int count = 0;
         _scoreBoard.text = "";
         _timeBoard.text = "";
-
-        foreach (var item in accounts.AsQueryable().OrderBy(s => s.TimePLaying).Take(5).ToList())
+        if(top5HighScore.Count == 0)
+        {
+            _scoreBoard.text = "NO DATA";
+            return;
+        }
+        foreach (var item in top5HighScore)
         {
             _scoreBoard.text += $"Top {++count}:" + item.Name + "\n";
-            _timeBoard.text += TimeSpan.FromMinutes(item.TimePLaying).ToString("hh':'mm':'ss") + "\n";
+            _timeBoard.text += TimeSpan.FromSeconds(item.TimePLaying).ToString("hh':'mm':'ss") + "\n";
         }
+
     }
 
     public void WriteData()
@@ -220,7 +241,7 @@ public class Menu : MonoBehaviour
             return;
         }
 
-        //checking duplicate name
+        //KIEM TRA TRUNG TEN
         foreach (var acc in accounts)
         {
             if(acc.Name == _currentName)
@@ -242,8 +263,58 @@ public class Menu : MonoBehaviour
         WriteData();
         ReadData();
         ChangeSnailTaking("REGISTER SUCCESS!");
-        Debug.Log("Login Success");
         ChangetoOtherMenu(loginMenu);
+    }
+    //Time level > 0 -> interatable
+    public void DisplayLevel()
+    {
+        foreach (var button in buttons) { 
+            button.GetComponent<Button>().interactable = false;
+        }
+
+        //NGUOI CHOI MOI DANG KY SE BAT DAU CHOI TU LELVEL 1
+        buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 1").interactable = true;
+
+        if (_currentAccount != null)
+            {
+                if (_currentAccount.Level2 > 0)
+                {
+                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 2").interactable = true;
+
+                }
+                if (_currentAccount.Level3 > 0)
+                {
+                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 3").interactable = true;
+
+                }
+                if (_currentAccount.Level4 > 0)
+                {
+                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 4").interactable = true;
+
+                }
+                if (_currentAccount.Level5 > 0)
+                {
+                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 5").interactable = true;
+
+                }
+                if (_currentAccount.Level6 > 0)
+                {
+                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 6").interactable = true;
+
+                }
+            }
+    }
+
+    public void ChoosingLevel(int level)
+    {
+        selectedLevel = level;    
+        SceneManager.LoadScene("Loading");
+    }
+
+
+    public void SelectLevel()
+    {
+
     }
 
 }
