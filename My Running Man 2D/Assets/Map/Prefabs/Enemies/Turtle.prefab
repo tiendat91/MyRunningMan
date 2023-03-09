@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5754265601373667834}
   - component: {fileID: -7688735071622198465}
   - component: {fileID: 3813381985172280691}
+  - component: {fileID: 230386593999527913}
   m_Layer: 8
   m_Name: Turtle
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -81336994, guid: f4fdbb0cd177565458bc344dea1ca292, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.44, y: 0.26}
@@ -205,5 +206,18 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
-  rayLenght: 5
   myStateController: {fileID: -7688735071622198465}
+--- !u!114 &230386593999527913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535588448682024211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deed554986448984686fb57a8bd1141a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs: []
+  dropChance: 0.5

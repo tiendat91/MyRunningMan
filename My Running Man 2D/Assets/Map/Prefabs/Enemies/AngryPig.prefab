@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3978848236553158841}
   - component: {fileID: -4250098363115898893}
   - component: {fileID: -3502732854840836755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AngryPig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deed554986448984686fb57a8bd1141a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefabs: []
+  dropChance: 0.5
 --- !u!114 &3978848236553158841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb0a084cbbaf49499119177dfecd2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 6578678730186909044, guid: 075aaa606268410419814fd5e88d44c4, type: 3}
+  objectPrefab: {fileID: 6578678730186909044, guid: beb519a20328ec44fb8f02d8de033227, type: 3}
   poolSize: 10
   poolCanExpand: 1
 --- !u!61 &-4250098363115898893
@@ -227,7 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6383672150676737712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}

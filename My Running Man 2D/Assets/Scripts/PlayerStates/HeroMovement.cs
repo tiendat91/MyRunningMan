@@ -8,7 +8,8 @@ public class HeroMovement : HeroStates
     [SerializeField] private float speed = 10f;
     private float _horizontalMovement;
     private float _movement;
-
+    public float Speed { get; set; }
+    public float InitialSpeed => speed;
     private int _idleAnimatorParameter = Animator.StringToHash("Idle");
     private int _runAnimatorParameter = Animator.StringToHash("Run");
 

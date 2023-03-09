@@ -12,6 +12,10 @@ public class Health : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int lifes = 3;
 
+    public int MaxLifes => _maxlifes;
+
+    public int CurrentLifes => _currentlifes;
+
     private int _maxlifes;
     private int _currentlifes;
 
@@ -33,7 +37,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void AddLife()
+    public void AddLife()
     {
         _currentlifes += 1;
         if (_currentlifes > _maxlifes)

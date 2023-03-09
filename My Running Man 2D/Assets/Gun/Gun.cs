@@ -64,6 +64,7 @@ public class Gun : MonoBehaviour
 
         // Set animation
         modelAnimator.SetTrigger(_fireParameter);
+
     }
 
     /// <summary>
