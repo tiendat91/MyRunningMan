@@ -24,16 +24,16 @@ public class TakeDamegeByTurtle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Enemy enemy = myAnimation.GetComponent<Enemy>();
+
         if (compareState == myStateController.currentState)
         {
-            enemy.enabled = false;
+
             Defense();
             isAttack = true;
         }
         else
         {
-            enemy.enabled = true;
+
             isAttack = false;
             Idle();
         }

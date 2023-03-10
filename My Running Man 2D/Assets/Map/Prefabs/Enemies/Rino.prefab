@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1772221880, guid: fe479cd450070d343ae712fc75c68579, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3, y: 1.75}
@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deed554986448984686fb57a8bd1141a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefabs: []
+  dropChance: 0.5
 --- !u!114 &751659769533431629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   minDistanceToPoint: 0.1
-  points: []
+  points:
+  - {x: 0, y: 0, z: 0}
+  - {x: -4, y: 0, z: 0}
 --- !u!114 &-6443872677383851049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,4 +216,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a028b21843748e468bde62c25437215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 130755477357957986, guid: 366107ed623c1df44ac11efbb3db96d5, type: 3}

@@ -3403,6 +3403,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 625295258}
+    - target: {fileID: 414081643202618783, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
 --- !u!1001 &6812541033779078167
@@ -3455,6 +3459,10 @@ PrefabInstance:
     - target: {fileID: 6812541034148464582, guid: 292afa88db43ca04eb488452b694cb2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812541034148464583, guid: 292afa88db43ca04eb488452b694cb2a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812541034148464583, guid: 292afa88db43ca04eb488452b694cb2a, type: 3}
       propertyPath: levelStartPoint
@@ -3533,6 +3541,10 @@ PrefabInstance:
     - target: {fileID: 9036727516700529521, guid: 587c5183fdc2ffc4a9efeaf462c24004, type: 3}
       propertyPath: m_Name
       value: EventSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036727516700529521, guid: 587c5183fdc2ffc4a9efeaf462c24004, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9036727516700529524, guid: 587c5183fdc2ffc4a9efeaf462c24004, type: 3}
       propertyPath: m_RootOrder

@@ -11,7 +11,7 @@ public class ProjectilePooler : MonoBehaviour
     public static Action<Collider2D> OnProjectileCollision;
 
     [Header("Settings")]
-    [SerializeField] private LayerMask collideWith;
+    [SerializeField] public LayerMask collideWith;
 
     private Projectile _projectile;
 

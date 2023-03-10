@@ -45,5 +45,13 @@ public class TakeDamageBySnail : MonoBehaviour
     {
         myAnimation.Play("snail_idle");
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && isAttack == true)
+        {
+            Debug.Log("LoseLife");
+            collision.GetComponent<Health>().LoseLife();
+        }
 
+    }
 }
