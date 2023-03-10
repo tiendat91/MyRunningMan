@@ -9,6 +9,7 @@ public class KeyManager : Singleton<KeyManager>
 
     private void Start()
     {
+        PlayerPrefs.SetInt(KEY_KEYS, 0);
         LoadCoins();
     }
 
@@ -36,7 +37,7 @@ public class KeyManager : Singleton<KeyManager>
     {
         TotalKeys -= amount;
 
-        PlayerPrefs.SetInt (KEY_KEYS, TotalKeys);
+        PlayerPrefs.SetInt(KEY_KEYS, TotalKeys);
         PlayerPrefs.Save();
     }
 }

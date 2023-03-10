@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform levelStartPoint;
     [SerializeField] private GameObject playerPrefab;
 
+    [Header("Levels")]
+    [SerializeField] private GameObject[] levels;
 
     private HeroMotor _currentPlayer;
 
@@ -32,6 +34,16 @@ public class LevelManager : MonoBehaviour
         //Call Event when Spawn
         OnPlayerSpawn?.Invoke(_currentPlayer);
     }
+
+    private void InitLevel(int levelIndex)
+    {
+        foreach (GameObject level in levels)
+        {
+            level.SetActive(false);
+        }
+        levels[levelIndex].SetActive(true);
+    }
+
 
     private void SpawnPlayer(GameObject player)
     {
