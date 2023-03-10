@@ -55,7 +55,7 @@ public class UIManagers : Singleton<UIManagers>
 
     private void ChangeValueJetPackage()
     {
-        fuelImage.fillAmount = Mathf.Lerp(fuelImage.fillAmount, _currentJetpackFuel / _jetpackFuel, Time.deltaTime * 10f);
+        //fuelImage.fillAmount = Mathf.Lerp(fuelImage.fillAmount, _currentJetpackFuel / _jetpackFuel, Time.deltaTime * 10f);
     }
 
     private void OnPlayerLifes(int currentLifes)
