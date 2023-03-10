@@ -28,7 +28,7 @@ public class Collectable : MonoBehaviour
 
     protected virtual void Collect()
     {
-        Debug.Log("This is working!!!");
+        Debug.Log("Item collected");
     }
 
     private void DisableCollectalbe()

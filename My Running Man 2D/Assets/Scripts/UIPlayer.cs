@@ -12,6 +12,7 @@ public class UIPlayer : MonoBehaviour
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject optionsSettings;
     [SerializeField] private TextMeshProUGUI timeCount;
+    [SerializeField] private TextMeshProUGUI keyCount;
     [SerializeField] public AudioSource _audio;
 
     [SerializeField] private float timeCounting = 10;
@@ -49,7 +50,7 @@ public class UIPlayer : MonoBehaviour
         }
 
         timeCount.text = TimeSpan.FromSeconds(timeCounting).ToString("hh':'mm':'ss");
-
+        UpdateKeys();
     }
         
     public void TurnOnPauseMenu(bool isOn)
@@ -89,5 +90,10 @@ public class UIPlayer : MonoBehaviour
     public void BackToHome()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void UpdateKeys()
+    {
+        keyCount.text = KeyManager.Instance.TotalKeys.ToString(); 
     }
 }
