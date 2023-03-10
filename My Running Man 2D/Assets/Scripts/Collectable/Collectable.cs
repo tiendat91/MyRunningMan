@@ -21,7 +21,7 @@ public class Collectable : MonoBehaviour
         {
             return;
         }
-
+        SoundManagers.Instance.PlaySound(AudioLibrary.Instance.CollectableClip);
         Collect();
         DisableCollectalbe();
     }

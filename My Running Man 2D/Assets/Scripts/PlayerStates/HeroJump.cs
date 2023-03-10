@@ -49,6 +49,7 @@ public class HeroJump : HeroStates
         float jumpForce = Mathf.Sqrt(jumpHeight * 2f * Mathf.Abs(_playerController.Gravity));
         _playerController.SetVerticalForce(jumpForce);
         _playerController.Conditions.IsJumping = true;
+        SoundManagers.Instance.PlaySound(AudioLibrary.Instance.JumpClip);
     }
 
     private bool CanJump()
