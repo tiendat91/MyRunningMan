@@ -12,12 +12,22 @@ public class Health : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int lifes = 3;
 
-    private int _maxlifes;
-    private int _currentlifes;
+    /// <summary>
+    /// 
+    /// </summary>
+    public int MaxLifes => _maxLifes;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public int CurrentLifes => _currentLifes;
+
+    private int _maxLifes;
+    private int _currentLifes;
 
     private void Awake()
     {
-        _maxlifes = lifes;
+        _maxLifes = lifes;
     }
 
     private void Start()
@@ -33,51 +43,78 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void AddLife()
+    /// <summary>
+    /// 
+    /// </summary>
+    public void AddLife()
     {
-        _currentlifes += 1;
-        if (_currentlifes > _maxlifes)
+        _currentLifes += 1;
+        if (_currentLifes > _maxLifes)
         {
-            _currentlifes = _maxlifes;
+            _currentLifes = _maxLifes;
         }
-        UpdatelifesUI();
 
+        UpdateLifesUI();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void LoseLife()
     {
-        _currentlifes -= 1;
-        if (_currentlifes <= 0)
+        _currentLifes -= 1;
+        if (_currentLifes <= 0)
         {
-            _currentlifes = 0;
+            _currentLifes = 0;
             OnDeath?.Invoke(gameObject.GetComponent<HeroMotor>());
         }
-        UpdatelifesUI();
+        UpdateLifesUI();
     }
 
-    public void ResetLife()
-    {
-        _currentlifes = lifes;
-        UpdatelifesUI();
-    }
-
-    private void UpdatelifesUI()
-    {
-        OnLifesChanged?.Invoke(_currentlifes);
-    }
-
-    ///////////////////////////////////
+    /// <summary>
+    /// 
+    /// </summary>
     public void KillPlayer()
     {
-        _currentlifes = 0;
-        UpdatelifesUI();
+        _currentLifes = 0;
+        UpdateLifesUI();
         OnDeath?.Invoke(gameObject.GetComponent<HeroMotor>());
     }
 
-    ///////////////////////////////////////////
+    /// <summary>
+    /// 
+    /// </summary>
+    public void ResetLife()
+    {
+        _currentLifes = lifes;
+        UpdateLifesUI();
+    }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void Revive()
     {
         OnRevive?.Invoke(gameObject.GetComponent<HeroMotor>());
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void UpdateLifesUI()
+    {
+        OnLifesChanged?.Invoke(_currentLifes);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<IDamageable>() != null)
+        {
+            other.GetComponent<IDamageable>().Damage(gameObject.GetComponent<HeroMotor>());
+        }
+        if(other.gameObject.tag == "Key")
+        {
+            
+        }
     }
 }

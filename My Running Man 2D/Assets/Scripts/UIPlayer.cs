@@ -16,7 +16,8 @@ public class UIPlayer : MonoBehaviour
 
     [SerializeField] private float timeCounting = 10;
     [SerializeField] private bool timerIsRunning = false;
-
+    [SerializeField] private int numberOfDeath = 0;
+    [SerializeField] private int keyCollected = 0;
     // Start is called before the first frame update
     void Start()
     {

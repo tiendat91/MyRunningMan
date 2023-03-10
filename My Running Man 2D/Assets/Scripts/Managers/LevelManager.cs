@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform levelStartPoint;
     [SerializeField] private GameObject playerPrefab;
 
+
     private HeroMotor _currentPlayer;
 
     private void Awake()
@@ -38,8 +39,6 @@ public class LevelManager : MonoBehaviour
         {
             _currentPlayer = Instantiate(player, levelStartPoint.position, Quaternion.identity).GetComponent<HeroMotor>();
             _currentPlayer.GetComponent<Health>().ResetLife();
-
-
         }
     }
 
@@ -58,6 +57,7 @@ public class LevelManager : MonoBehaviour
     private void PlayerDeath(HeroMotor player)
     {
         _currentPlayer.gameObject.SetActive(false);
+        RevivePlayer();
     }
 
     private void OnEnable()

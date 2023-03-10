@@ -57,7 +57,7 @@ public class HeroController : MonoBehaviour
         _boxCollider2D = GetComponent<BoxCollider2D>();
 
         //set trang trai collision va falling
-        _conditions = new HeroConditions();
+        _conditions = new HeroConditions(); 
         _conditions.Reset();
     }
 

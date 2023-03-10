@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a98b0b4739ec54a929d4e80f2fb0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -20
+  gravity: -60
   fallMultiplier: 0.5
   collideWith:
     serializedVersion: 2
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abc63d4342d0b44faff16620afc689b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 5
+  jumpHeight: 2.459
   maxJumps: 2
 --- !u!114 &4616457550780335928
 MonoBehaviour:
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac7142aa2fadf142bde24bbad0efd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallFactor: 0.5
+  fallFactor: 0
 --- !u!114 &7999703694126907203
 MonoBehaviour:
   m_ObjectHideFlags: 0
