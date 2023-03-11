@@ -9,14 +9,14 @@ public class CheckPoint : MonoBehaviour
     public static Action<int> OnLevelCompleted;
 
     [Header("Settigns")]
-    [SerializeField] private int levelIndex;
+    [SerializeField] private string nextLevelName;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            OnLevelCompleted?.Invoke(levelIndex);
-            SceneManager.LoadScene(levelIndex);
+            Menu.selectedLevel = nextLevelName;
+            SceneManager.LoadScene("Loading");
         }
     }
 

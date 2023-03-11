@@ -114,9 +114,5 @@ public class Health : MonoBehaviour
         {
             other.GetComponent<IDamageable>().Damage(gameObject.GetComponent<HeroMotor>());
         }
-        if(other.gameObject.tag == "Key")
-        {
-            
-        }
     }
 }

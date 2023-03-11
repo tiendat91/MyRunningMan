@@ -206,6 +206,7 @@ MonoBehaviour:
   optionsSettings: {fileID: 2838753418035872447}
   timeCount: {fileID: 2838753417651763397}
   keyCount: {fileID: 2838753417258312914}
+  deathCount: {fileID: 2838753416072019193}
   _audio: {fileID: 0}
   timeCounting: 0
   timerIsRunning: 1

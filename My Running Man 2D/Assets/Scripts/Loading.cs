@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,6 +42,9 @@ public class Loading : MonoBehaviour
                 break;
             case "level6"://LEVEL 6
                 SceneManager.LoadScene("Level6");
+                break;
+            case "menu":
+                SceneManager.LoadScene("Menu");
                 break;
         }
     }
