@@ -98,14 +98,14 @@ public class GunController : MonoBehaviour
             Vector3 rightDirection = new Vector3(-1, 1, 1);
             if (GameObject.Find("Player(Clone)").transform.localScale == rightDirection)
             {
-                Instantiate(gunDrop, new Vector3(GameObject.Find("Player(Clone)").transform.position.x - 2f, GameObject.Find("Player(Clone)").transform.position.y, 0), Quaternion.identity);
+                Instantiate(gunDrop, new Vector3(GameObject.Find("Player(Clone)").transform.position.x - 4f, GameObject.Find("Player(Clone)").transform.position.y, 0), Quaternion.identity);
                 Vector3 vector = GameObject.Find("GunCollectable(Clone)").transform.localScale;
                 vector.x *= -1;
                 GameObject.Find("GunCollectable(Clone)").transform.localScale = vector;
             }
             else
             {
-                Instantiate(gunDrop, new Vector3(GameObject.Find("Player(Clone)").transform.position.x + 2f, GameObject.Find("Player(Clone)").transform.position.y, 0), Quaternion.identity);
+                Instantiate(gunDrop, new Vector3(GameObject.Find("Player(Clone)").transform.position.x + 4f, GameObject.Find("Player(Clone)").transform.position.y, 0), Quaternion.identity);
             }
             _gunEquipped.transform.SetParent(null);
             _gunEquipped = null;

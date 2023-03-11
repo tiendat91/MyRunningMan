@@ -81,7 +81,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7578514528925329086, guid: 80e83235b588e5b4fa356fab587fea17, type: 3}
   firePoint: {fileID: 3869538099178726063}
   modelAnimator: {fileID: 8619932762812267741}
-  msBetweenShots: 1000
+  msBetweenShots: 300
   magazineSize: 30
   autoReload: 1
   reloadTime: 3
