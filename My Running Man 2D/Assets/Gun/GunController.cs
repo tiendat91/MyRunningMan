@@ -29,6 +29,7 @@ public class GunController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+            Debug.Log("fire");
         }
 
         if (Input.GetKeyDown(KeyCode.H))

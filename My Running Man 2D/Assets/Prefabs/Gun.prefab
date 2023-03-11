@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 3865469652671109515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.626189, y: -1.595391, z: 307.75632}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.71, y: 0.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4991351539154059725}
@@ -81,7 +81,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7578514528925329086, guid: 80e83235b588e5b4fa356fab587fea17, type: 3}
   firePoint: {fileID: 3869538099178726063}
   modelAnimator: {fileID: 8619932762812267741}
-  msBetweenShots: 300
+  msBetweenShots: 1000
   magazineSize: 30
   autoReload: 1
   reloadTime: 3
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb0a084cbbaf49499119177dfecd2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 670465698748567344, guid: 80e83235b588e5b4fa356fab587fea17, type: 3}
   poolSize: 10
   poolCanExpand: 1
 --- !u!1001 &1709375687387429917

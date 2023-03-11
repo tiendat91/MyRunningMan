@@ -59,11 +59,12 @@ public class Gun : MonoBehaviour
         // Get projectile
         Projectile projectile = newProjectile.GetComponent<Projectile>();
         projectile.GunEquipped = this;
-        projectile.SetDirection(GunController.PlayerController.FacingRight ? Vector3.right : Vector3.left);
+        projectile.SetDirection((GunController.PlayerController.FacingRight ? Vector3.right : Vector3.left), firePoint.position);
         projectile.EnableProjectile();
 
         // Set animation
         modelAnimator.SetTrigger(_fireParameter);
+
     }
 
     /// <summary>
