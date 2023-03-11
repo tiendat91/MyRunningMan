@@ -228,6 +228,32 @@ PrefabInstance:
       objectReference: {fileID: 1447561412}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+--- !u!1 &370130321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2838753416253109394, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+  m_PrefabInstance: {fileID: 370130320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &370130322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2838753416459733207, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+  m_PrefabInstance: {fileID: 370130320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &370130323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2838753416013375165, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+  m_PrefabInstance: {fileID: 370130320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &370130324 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2838753416537487645, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+  m_PrefabInstance: {fileID: 370130320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &399044871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,6 +461,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 251781187051191809, guid: f0f2552c5c4b22b4aa6c1a63c87978ba, type: 3}
+      propertyPath: fuelImage
+      value: 
+      objectReference: {fileID: 370130324}
+    - target: {fileID: 251781187051191809, guid: f0f2552c5c4b22b4aa6c1a63c87978ba, type: 3}
+      propertyPath: playerLifes.Array.data[0]
+      value: 
+      objectReference: {fileID: 370130323}
+    - target: {fileID: 251781187051191809, guid: f0f2552c5c4b22b4aa6c1a63c87978ba, type: 3}
+      propertyPath: playerLifes.Array.data[1]
+      value: 
+      objectReference: {fileID: 370130322}
+    - target: {fileID: 251781187051191809, guid: f0f2552c5c4b22b4aa6c1a63c87978ba, type: 3}
+      propertyPath: playerLifes.Array.data[2]
+      value: 
+      objectReference: {fileID: 370130321}
     - target: {fileID: 251781187051191814, guid: f0f2552c5c4b22b4aa6c1a63c87978ba, type: 3}
       propertyPath: m_RootOrder
       value: 3

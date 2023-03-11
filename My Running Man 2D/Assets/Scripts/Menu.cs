@@ -74,11 +74,14 @@ public class Menu : MonoBehaviour
         panels[0].SetActive(true);
 
         //change snail's text
+        ReadData();
+
         ChangeSnailTaking("READY FOR YOUR ADVANTURE?");
     }
 
     public void QuitGame()
     {
+        ReadData();
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }
@@ -272,7 +275,7 @@ public class Menu : MonoBehaviour
         foreach (var button in buttons) { 
             button.GetComponent<Button>().interactable = false;
         }
-
+        buttons.AsQueryable().FirstOrDefault(x => x.name == "SpecialRound").interactable = true;
         //NGUOI CHOI MOI DANG KY SE BAT DAU CHOI TU LELVEL 1
         buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 1").interactable = true;
 
