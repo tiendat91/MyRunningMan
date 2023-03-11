@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: nextLevelName
       value: level3
       objectReference: {fileID: 0}
+    - target: {fileID: 6057858215863920400, guid: f32c79e9d77c3294b93da7d01ccc7753, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6057858215863920404, guid: f32c79e9d77c3294b93da7d01ccc7753, type: 3}
       propertyPath: m_Camera
       value: 
