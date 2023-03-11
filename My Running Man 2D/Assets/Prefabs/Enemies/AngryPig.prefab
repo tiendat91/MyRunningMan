@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3978848236553158841}
   - component: {fileID: -4250098363115898893}
   - component: {fileID: -3502732854840836755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AngryPig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6383672150676737712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
