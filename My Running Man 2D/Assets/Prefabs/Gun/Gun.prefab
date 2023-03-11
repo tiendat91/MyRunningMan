@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869218575543980509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 0.16, z: 0}
+  m_LocalPosition: {x: 1.56, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3865469652671109515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.626189, y: -1.595391, z: 307.75632}
+  m_LocalPosition: {x: 15.37, y: -1.595391, z: 307.75632}
   m_LocalScale: {x: 0.71, y: 0.68, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -81,7 +81,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7578514528925329086, guid: 80e83235b588e5b4fa356fab587fea17, type: 3}
   firePoint: {fileID: 3869538099178726063}
   modelAnimator: {fileID: 8619932762812267741}
-  msBetweenShots: 300
+  msBetweenShots: 400
   magazineSize: 30
   autoReload: 1
   reloadTime: 3
@@ -117,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5979720264706571728, guid: 5de5d6aa23ae0e842a10a62c8a9e0afe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.31
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 5979720264706571728, guid: 5de5d6aa23ae0e842a10a62c8a9e0afe, type: 3}
       propertyPath: m_LocalPosition.y

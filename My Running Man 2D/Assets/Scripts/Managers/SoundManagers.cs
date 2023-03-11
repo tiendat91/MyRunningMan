@@ -24,8 +24,6 @@ public class SoundManagers : Singleton<SoundManagers>
             return;
         }
 
-        int randomTheme = Random.Range(0, mainThemes.Length);
-
         _audioSource.clip = mainThemes[0];
         _audioSource.Play();
     }

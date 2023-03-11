@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GunController : MonoBehaviour
 {
@@ -21,7 +22,16 @@ public class GunController : MonoBehaviour
     private void Start()
     {
         PlayerController = GetComponent<HeroController>();
-
+        if (SceneManager.GetActiveScene().name == "SpecialRound")
+        {
+            GetComponent<GunController>().enabled = true;
+            GetComponent<AudioSource>().enabled = true;
+        }
+        else
+        {
+            GetComponent<AudioSource>().enabled = false;
+            GetComponent<GunController>().enabled = false;
+        }
     }
 
     private void Update()
@@ -111,7 +121,6 @@ public class GunController : MonoBehaviour
             _gunEquipped = null;
             Destroy(GameObject.Find("Gun(Clone)"));
             Destroy(GameObject.Find("Pooler: All_Fire_Bullet_Pixel_16x16_277"));
-
         }
     }
 
