@@ -30,7 +30,8 @@ public class Menu : MonoBehaviour
     private static string _currentConfirmPassword;
     private string fileName = null;
     public static string selectedLevel;
-
+    public string NameLogin { get; set; }
+    private string KEY_NAME = "MyGame_NAME";
 
     void Start()
     {
@@ -125,6 +126,7 @@ public class Menu : MonoBehaviour
                 ChangeSnailTaking("LOGIN SUCCESS!");
                 ChangetoOtherMenu(levelMenu);
                 DisplayLevel();
+                PlayerPrefs.SetString(KEY_NAME, acc.Name);
                 return;
             }
         }

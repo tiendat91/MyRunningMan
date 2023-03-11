@@ -208,6 +208,7 @@ MonoBehaviour:
   keyCount: {fileID: 2838753417258312914}
   deathCount: {fileID: 2838753416072019193}
   _audio: {fileID: 0}
+  _textAsset: {fileID: 4900000, guid: 4a78e027011f3ea47af17de2f44b833f, type: 3}
   timeCounting: 0
   timerIsRunning: 1
   numberOfDeath: 0
@@ -1807,8 +1808,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255443
-  m_fontColor: {r: 0.3265822, g: 1, b: 0, a: 1}
+    rgba: 4278255484
+  m_fontColor: {r: 0.48698807, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2815,8 +2816,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

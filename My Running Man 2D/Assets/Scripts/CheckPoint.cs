@@ -7,16 +7,30 @@ using UnityEngine.SceneManagement;
 public class CheckPoint : MonoBehaviour
 {
     public static Action<int> OnLevelCompleted;
+    private string KEY_KEYS = "MyGame_TOTAL_KEYS";
+
 
     [Header("Settigns")]
     [SerializeField] private string nextLevelName;
+    [SerializeField] private GameObject chatBubble;
+
+    private void Start()
+    {
+        chatBubble.active = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Menu.selectedLevel = nextLevelName;
-            SceneManager.LoadScene("Loading");
+            if (PlayerPrefs.GetInt(KEY_KEYS, 0) == 3) {
+                Menu.selectedLevel = nextLevelName;
+                SceneManager.LoadScene("Loading");
+            }
+            else
+            {
+                chatBubble.active = true;
+            }
         }
     }
 
