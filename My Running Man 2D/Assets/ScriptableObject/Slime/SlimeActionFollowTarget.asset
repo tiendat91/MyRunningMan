@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c64f931310ce741817def58b3c1f5f, type: 3}
   m_Name: SlimeActionFollowTarget
   m_EditorClassIdentifier: 
-  followSpeed: 6
+  followSpeed: 3
   minDistanceToTarget: 0.2

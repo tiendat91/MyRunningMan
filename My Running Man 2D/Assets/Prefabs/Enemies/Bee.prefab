@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9070462533556072726}
   - component: {fileID: -3493133249999810357}
   - component: {fileID: 4687355196191642627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   minDistanceToPoint: 0.1
-  points: []
+  points:
+  - {x: 0, y: 0, z: 0}
+  - {x: 3, y: 0, z: 0}
+  - {x: 0, y: 2, z: 0}
 --- !u!1 &7975884103031727276
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8731652070100703013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}

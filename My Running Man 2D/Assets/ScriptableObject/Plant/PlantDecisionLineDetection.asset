@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   rayLenght: 5

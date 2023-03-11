@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8819529597278722657}
   - component: {fileID: -3106204065695873029}
   - component: {fileID: 1596730719920193801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Snail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504ecee31b5588847974ff8517358937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compareState: {fileID: 0}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  myStateController: {fileID: 0}
 --- !u!50 &-8819529597278722657
 Rigidbody2D:
   serializedVersion: 4

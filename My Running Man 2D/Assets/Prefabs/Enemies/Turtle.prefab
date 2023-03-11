@@ -123,11 +123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d612521e5dd9aa4bbbbc3b8a1900715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compareState: {fileID: 0}
+  compareState: {fileID: 11400000, guid: 1908da022bd54764ea639634b4e2bdb5, type: 2}
   playerMask:
     serializedVersion: 2
-    m_Bits: 0
-  myStateController: {fileID: 0}
+    m_Bits: 128
+  myStateController: {fileID: -2920041577036102018}
 --- !u!61 &-4881970365747414019
 BoxCollider2D:
   m_ObjectHideFlags: 0
