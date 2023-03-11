@@ -6,7 +6,7 @@ using UnityEngine;
 public class StateController : MonoBehaviour
 {
     [Header("State")]
-    [SerializeField] private AIState currentState;
+    [SerializeField] public AIState currentState;
     [SerializeField] private AIState remainState;
 
     [Header("Shooting")]
