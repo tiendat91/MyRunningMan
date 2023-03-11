@@ -17,7 +17,7 @@ public class UIManagers : Singleton<UIManagers>
     // Start is called before the first frame update
     void Update()
     {
-        ChangeValueJetPackage();
+        //ChangeValueJetPackage();
     }
 
     // Update is called once per frame

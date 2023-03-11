@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
     private static string _currentPassword;
     private static string _currentConfirmPassword;
     private string fileName = null;
-    public static int selectedLevel;
+    public static string selectedLevel;
 
 
     void Start()
@@ -306,7 +306,7 @@ public class Menu : MonoBehaviour
             }
     }
 
-    public void ChoosingLevel(int level)
+    public void ChoosingLevel(string level)
     {
         selectedLevel = level;    
         SceneManager.LoadScene("Loading");
