@@ -78,13 +78,13 @@ public class GunController : MonoBehaviour
             _gunEquipped.GunController = this;
             _gunEquipped.transform.SetParent(holder);
             GameObject.Find("Gun(Clone)").transform.localScale = Vector3.one;
-            if (GameObject.Find("BarretGunCollection") != null)
+            if (GameObject.Find("GunCollectable") != null)
             {
-                Destroy(GameObject.Find("BarretGunCollection"));
+                Destroy(GameObject.Find("GunCollectable"));
             }
             else
             {
-                Destroy(GameObject.Find("BarretGunCollection(Clone)"));
+                Destroy(GameObject.Find("GunCollectable(Clone)"));
             }
 
         }
@@ -98,9 +98,9 @@ public class GunController : MonoBehaviour
             if (GameObject.Find("Player(Clone)").transform.localScale == rightDirection)
             {
                 Instantiate(gunDrop, new Vector3(GameObject.Find("Player(Clone)").transform.position.x - 2f, GameObject.Find("Player(Clone)").transform.position.y, 0), Quaternion.identity);
-                Vector3 vector = GameObject.Find("BarretGunCollection(Clone)").transform.localScale;
+                Vector3 vector = GameObject.Find("GunCollectable(Clone)").transform.localScale;
                 vector.x *= -1;
-                GameObject.Find("BarretGunCollection(Clone)").transform.localScale = vector;
+                GameObject.Find("GunCollectable(Clone)").transform.localScale = vector;
             }
             else
             {
@@ -109,7 +109,7 @@ public class GunController : MonoBehaviour
             _gunEquipped.transform.SetParent(null);
             _gunEquipped = null;
             Destroy(GameObject.Find("Gun(Clone)"));
-            Destroy(GameObject.Find("Pooler: All_Fire_Bullet_Pixel_16x16_87"));
+            Destroy(GameObject.Find("Pooler: All_Fire_Bullet_Pixel_16x16_277"));
 
         }
     }

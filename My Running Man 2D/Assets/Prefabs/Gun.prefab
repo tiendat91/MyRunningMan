@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 799020271691342742}
   - component: {fileID: 5690217777313598648}
   - component: {fileID: 8652873218534792838}
-  - component: {fileID: 6122735997690722328}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -81,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 7578514528925329086, guid: 80e83235b588e5b4fa356fab587fea17, type: 3}
   firePoint: {fileID: 3869538099178726063}
-  modelAnimator: {fileID: 6122735997690722328}
+  modelAnimator: {fileID: 8619932762812267741}
   msBetweenShots: 300
   magazineSize: 30
   autoReload: 1
@@ -101,26 +100,6 @@ MonoBehaviour:
   objectPrefab: {fileID: 0}
   poolSize: 10
   poolCanExpand: 1
---- !u!95 &6122735997690722328
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3865469652671109515}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d07823d5375efdb45a230db79cf89588, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1709375687387429917
 PrefabInstance:
   m_ObjectHideFlags: 0
