@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0074b6dfa05e3d2488ae09e1b5b82f79, type: 3}
+  m_Name: ChameleonFollowPath
+  m_EditorClassIdentifier: 
+  Actions:
+  - {fileID: 11400000, guid: 8adf75723bc9382408ae6cf8d4ef1fa8, type: 2}
+  - {fileID: 11400000, guid: 7f5aef2e4c20c1347ab2d176c0f9e1da, type: 2}
+  Transitions:
+  - Decision: {fileID: 11400000, guid: 611e6b8100c51784aa84a22f2fe62a80, type: 2}
+    TrueState: {fileID: 11400000, guid: cabc95f39c3c8b5458fc32db5d979a42, type: 2}
+    FalseState: {fileID: 11400000, guid: b874b008d42667c4db63f4e960f01687, type: 2}
