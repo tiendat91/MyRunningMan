@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7999703694126907203}
   - component: {fileID: 3374027880870123143}
   - component: {fileID: 7567814808879663083}
+  - component: {fileID: 8242329531417488728}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -238,3 +239,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 3
+--- !u!114 &8242329531417488728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130755477357957986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee5ac9c55a6ad64b9ca6bb7de57dfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 0}
+  holder: {fileID: 0}
