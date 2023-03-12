@@ -21,16 +21,16 @@ public class UIPlayer : MonoBehaviour
     [SerializeField] public AudioSource _audio;
     [SerializeField] private UnityEngine.TextAsset _textAsset;
 
-    [SerializeField] private float timeCounting = 10;
+    [SerializeField] public static float timeCounting = 10;
     [SerializeField] private bool timerIsRunning = false;
     [SerializeField] private int numberOfDeath = 0;
     [SerializeField] private int keyCollected = 0;
+    public static string KEY_NAME = "MyGame_NAME";
 
 
     public List<Account> Accounts { get; set; }
 
-    private string fileName = null;
-    private static List<Account> accounts = new List<Account>();
+    private static string fileName = null;
 
     // Start is called before the first frame update
     void Start()
@@ -153,54 +153,87 @@ public class UIPlayer : MonoBehaviour
     //    }
     //}
 
-    public void WriteDataWithTime()
+    public static void WriteDataWithTimeIntoAccount()
     {
         try
         {
             TextWriter tw = new StreamWriter(fileName,false);
             tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6");
-            foreach (var acc in accounts)
+            foreach (var acc in Menu.accounts)
             {
-                if (Menu.selectedLevel != null)
-                {
-                    switch (Menu.selectedLevel)
+                Debug.Log(PlayerPrefs.GetString(KEY_NAME).ToLower().ToString());
+                if(PlayerPrefs.GetString(KEY_NAME).ToLower().ToString() == acc.Name){
+                    if (SceneManager.GetActiveScene().name != null)
                     {
-                        case "level1"://LEVEL 1
-                            if (timeCounting < acc.Level1)
-                            {
-                                acc.Level1 = timeCounting;
-                            }
-                            break;
-                        case "level2"://LEVEL 2
-                            if (timeCounting < acc.Level2)
-                            {
-                                acc.Level2 = timeCounting;
-                            }
-                            break;
-                        case "level3"://LEVEL 3
-                            if (timeCounting < acc.Level3)
-                            {
-                                acc.Level3 = timeCounting;
-                            }
-                            break;
-                        case "level4"://LEVEL 4
-                            if (timeCounting < acc.Level4)
-                            {
-                                acc.Level4 = timeCounting;
-                            }
-                            break;
-                        case "level5"://LEVEL 5
-                            if (timeCounting < acc.Level5)
-                            {
-                                acc.Level5 = timeCounting;
-                            }
-                            break;
-                        case "level6"://LEVEL 6
-                            if (timeCounting < acc.Level6)
-                            {
-                                acc.Level6 = timeCounting;
-                            }
-                            break;
+                        switch (SceneManager.GetActiveScene().name)
+                        {
+                            case "Level1"://LEVEL 1
+                                if(acc.Level1 == 0)
+                                {
+                                    acc.Level1 = timeCounting;
+                                    break;
+                                }
+                                if (timeCounting < acc.Level1)
+                                {
+                                    acc.Level1 = timeCounting;
+                                }
+                                break;
+                            case "Level2"://LEVEL 2
+                                if (acc.Level2 == 0)
+                                {
+                                    acc.Level2 = timeCounting;
+                                    break;
+                                }
+                                if (timeCounting < acc.Level2)
+                                {
+                                    acc.Level2 = timeCounting;
+                                }
+                                break;
+                            case "Level3"://LEVEL 3
+                                if (acc.Level3 == 0)
+                                {
+                                    acc.Level3 = timeCounting;
+                                    break;
+                                }
+                                if (timeCounting < acc.Level3)
+                                {
+                                    acc.Level3 = timeCounting;
+                                }
+                                break;
+                            case "Level4"://LEVEL 4
+                                if (acc.Level4 == 0)
+                                {
+                                    acc.Level4 = timeCounting;
+                                    break;
+                                }
+                                if (timeCounting < acc.Level4)
+                                {
+                                    acc.Level4 = timeCounting;
+                                }
+                                break;
+                            case "Level5"://LEVEL 5
+                                if (acc.Level5 == 0)
+                                {
+                                    acc.Level5 = timeCounting;
+                                    break;
+                                }
+                                if (timeCounting < acc.Level5)
+                                {
+                                    acc.Level5 = timeCounting;
+                                }
+                                break;
+                            case "Level6"://LEVEL 6
+                                if (acc.Level6 == 0)
+                                {
+                                    acc.Level6 = timeCounting;
+                                    break;
+                                }
+                                if (timeCounting < acc.Level6)
+                                {
+                                    acc.Level6 = timeCounting;
+                                }
+                                break;
+                        }
                     }
                 }
 
@@ -217,5 +250,11 @@ public class UIPlayer : MonoBehaviour
         {
             throw;
         }
+    }
+
+
+    public static void ResetTimeCounting()
+    {
+        timeCounting = 0;
     }
 }

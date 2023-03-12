@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreBoard;
     [SerializeField] private TextMeshProUGUI _timeBoard;
 
-    private static List<Account> accounts = new List<Account>();
+    public static List<Account> accounts = new List<Account>();
     private Account _currentAccount;
     private static List<Account> top5HighScore = new List<Account>();
     private static string _currentName;
@@ -212,7 +212,7 @@ public class Menu : MonoBehaviour
     {
         try
         {
-            TextWriter tw = new StreamWriter(fileName,false);
+            TextWriter tw = new StreamWriter(this.fileName,false);
             tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6");
             foreach (var acc in accounts)
             {
@@ -227,7 +227,6 @@ public class Menu : MonoBehaviour
         }
         catch (Exception)
         {
-
             throw;
         }
     }

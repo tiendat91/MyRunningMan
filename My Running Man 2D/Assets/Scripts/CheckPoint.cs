@@ -24,6 +24,7 @@ public class CheckPoint : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             if (PlayerPrefs.GetInt(KEY_KEYS, 0) == 3) {
+                UIPlayer.WriteDataWithTimeIntoAccount();
                 Menu.selectedLevel = nextLevelName;
                 SceneManager.LoadScene("Loading");
             }

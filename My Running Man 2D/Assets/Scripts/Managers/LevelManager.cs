@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         SpawnPlayer(playerPrefab);
+        UIPlayer.ResetTimeCounting();
     }
 
     private void Update()
