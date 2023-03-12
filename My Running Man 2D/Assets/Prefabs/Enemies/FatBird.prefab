@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2131308863993297575}
   m_Layer: 0
   m_Name: FatBird
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

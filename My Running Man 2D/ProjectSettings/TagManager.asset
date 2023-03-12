@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LevelBtn
   - Key
+  - Enemy
   layers:
   - Default
   - TransparentFX
