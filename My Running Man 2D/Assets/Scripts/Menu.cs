@@ -86,7 +86,7 @@ public class Menu : MonoBehaviour
     {
         ReadData();
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void TurnOnOffAudio(bool isCheck)
@@ -270,7 +270,6 @@ public class Menu : MonoBehaviour
         });
 
         WriteData();
-        ReadData();
         ChangeSnailTaking("REGISTER SUCCESS!");
         ChangetoOtherMenu(loginMenu);
     }

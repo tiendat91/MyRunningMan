@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 public class UIPlayer : MonoBehaviour
 {

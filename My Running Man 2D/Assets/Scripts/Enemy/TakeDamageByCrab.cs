@@ -11,7 +11,7 @@ public class TakeDamageByCrab : MonoBehaviour
 
     Animator myAnimation;
     public StateController myStateController;
-    bool PlayerActive = false;
+    //bool PlayerActive = false;
     bool isAttack = false;
 
     // Start is called before the first frame update
