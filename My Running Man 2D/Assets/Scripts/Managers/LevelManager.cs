@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class LevelManager : MonoBehaviour
     {
         if (_currentPlayer != null)
         {
+            if (SceneManager.GetActiveScene().name == "SpecialRound")
+            {
+                Menu.selectedLevel = "special";
+                SceneManager.LoadScene("GameOver");
+            }
             _currentPlayer.gameObject.SetActive(true);
             _currentPlayer.SpawnPlayer(levelStartPoint); //chuyen nhan vat den vi tri moi
             _currentPlayer.GetComponent<Health>().ResetLife(); //reset lai UI heart tren man hinh

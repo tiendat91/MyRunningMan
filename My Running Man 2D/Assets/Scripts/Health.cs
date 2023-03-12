@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class Health : MonoBehaviour
     /// </summary>
     public void KillPlayer()
     {
+
         _currentLifes = 0;
         SoundManagers.Instance.PlaySound(AudioLibrary.Instance.PlayerDeadClip);
         UpdateLifesUI();
@@ -88,6 +90,7 @@ public class Health : MonoBehaviour
     /// </summary>
     public void ResetLife()
     {
+
         _currentLifes = lifes;
         UpdateLifesUI();
     }

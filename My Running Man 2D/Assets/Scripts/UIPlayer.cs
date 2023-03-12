@@ -103,6 +103,11 @@ public class UIPlayer : MonoBehaviour
         _audio.GetComponent<AudioSource>().mute = isCheck;
     }
 
+    public void PlayAgainSpecialRound()
+    {
+        SceneManager.LoadScene("Loading");
+    }
+
     public void BackToHome()
     {
         SceneManager.LoadScene("Menu");
