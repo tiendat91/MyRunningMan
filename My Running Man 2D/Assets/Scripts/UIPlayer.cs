@@ -27,6 +27,8 @@ public class UIPlayer : MonoBehaviour
     [SerializeField] private int keyCollected = 0;
 
 
+    public List<Account> Accounts { get; set; }
+
     private string fileName = null;
     private static List<Account> accounts = new List<Account>();
 
@@ -38,15 +40,15 @@ public class UIPlayer : MonoBehaviour
 
         panelSettings.SetActive(false);
         optionsSettings.SetActive(false);
-        ReadData();
+        //ReadData();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
-            TurnOnPauseMenu(true);
-        }
+        //if(Input.GetKeyDown(KeyCode.Escape)) {
+        //    TurnOnPauseMenu(true);
+        //}
 
         if (timerIsRunning)
         {
@@ -116,41 +118,41 @@ public class UIPlayer : MonoBehaviour
         deathCount.text = "X "+ DeathManager.Instance.TotalDeaths.ToString();
     }
 
-    public void ReadData()
-    {
-        string[] data = _textAsset.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
-        int NumberOfPropertiesInData = typeof(Account).GetProperties().Length;
-        int tableSize = data.Length / NumberOfPropertiesInData - 1;
-        for (int i = NumberOfPropertiesInData; i < data.Length - NumberOfPropertiesInData; i += NumberOfPropertiesInData)
-        {
-            accounts.Add(new Account()
-            {
-                Name = data[i],
-                Password = data[i + 1],
-                Score = Int32.Parse(data[i + 2]),
-                NumberOfDeath = Int32.Parse(data[i + 3]),
-                Level1 = float.Parse(data[i + 5]),
-                Level2 = float.Parse(data[i + 6]),
-                Level3 = float.Parse(data[i + 7]),
-                Level4 = float.Parse(data[i + 8]),
-                Level5 = float.Parse(data[i + 9]),
-                Level6 = float.Parse(data[i + 10]),
+    //public void ReadData()
+    //{
+    //    string[] data = _textAsset.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
+    //    int NumberOfPropertiesInData = typeof(Account).GetProperties().Length;
+    //    int tableSize = data.Length / NumberOfPropertiesInData - 1;
+    //    for (int i = NumberOfPropertiesInData; i < data.Length - NumberOfPropertiesInData; i += NumberOfPropertiesInData)
+    //    {
+    //        accounts.Add(new Account()
+    //        {
+    //            Name = data[i],
+    //            Password = data[i + 1],
+    //            Score = Int32.Parse(data[i + 2]),
+    //            NumberOfDeath = Int32.Parse(data[i + 3]),
+    //            Level1 = float.Parse(data[i + 5]),
+    //            Level2 = float.Parse(data[i + 6]),
+    //            Level3 = float.Parse(data[i + 7]),
+    //            Level4 = float.Parse(data[i + 8]),
+    //            Level5 = float.Parse(data[i + 9]),
+    //            Level6 = float.Parse(data[i + 10]),
 
-                TimePLaying = float.Parse(data[i + 5])
-                + float.Parse(data[i + 6])
-                + float.Parse(data[i + 7])
-                + float.Parse(data[i + 8])
-                + float.Parse(data[i + 9])
-                + float.Parse(data[i + 10])
-            });
-        }
-    }
+    //            TimePLaying = float.Parse(data[i + 5])
+    //            + float.Parse(data[i + 6])
+    //            + float.Parse(data[i + 7])
+    //            + float.Parse(data[i + 8])
+    //            + float.Parse(data[i + 9])
+    //            + float.Parse(data[i + 10])
+    //        });
+    //    }
+    //}
 
     public void WriteDataWithTime()
     {
         try
         {
-            TextWriter tw = new StreamWriter(fileName, false);
+            TextWriter tw = new StreamWriter(fileName,false);
             tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6");
             foreach (var acc in accounts)
             {

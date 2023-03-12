@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5820391557022939971}
   - component: {fileID: 3517645730459308556}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: chat_bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7766484399898043857}
   - component: {fileID: 3838029414013762024}
   - component: {fileID: 4859971673359616609}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1473744477
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -887819100, guid: 324cbc6b4f236cd48bfaf9d31dd21d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 6952455948885721957}
   - component: {fileID: 5586968089392602889}
   - component: {fileID: 6008464340582269657}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ChatBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 331545849458385820}
   - component: {fileID: 847660851705862137}
   - component: {fileID: 8657372994760446533}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

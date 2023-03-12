@@ -78,7 +78,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -174,7 +174,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpClip: {fileID: 8300000, guid: bfa53085a32ee044c95af13e0b40c7c7, type: 3}
   collectableClip: {fileID: 8300000, guid: 414796d6a3e35d54f8a52ea55fbe6b0d, type: 3}
-  projecttileCLip: {fileID: 0}
-  enemyProjecttileCLip: {fileID: 0}
   playerDeadClip: {fileID: 8300000, guid: 6108793520cd51844b616ae610cf8915, type: 3}
-  projectileCollisionCLip: {fileID: 0}

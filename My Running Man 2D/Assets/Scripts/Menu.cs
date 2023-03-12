@@ -33,6 +33,8 @@ public class Menu : MonoBehaviour
     public string NameLogin { get; set; }
     private string KEY_NAME = "MyGame_NAME";
 
+    public List<Account> Accounts { get; set; }
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -77,7 +79,7 @@ public class Menu : MonoBehaviour
         //change snail's text
         ReadData();
 
-        ChangeSnailTaking("READY FOR YOUR ADVANTURE?");
+        ChangeSnailTaking("READY FOR YOUR ADVENTURE?");
     }
 
     public void QuitGame()
@@ -181,6 +183,8 @@ public class Menu : MonoBehaviour
 
             });
         }
+
+        Accounts = accounts;
     }
 
     public void GetHighScore()
