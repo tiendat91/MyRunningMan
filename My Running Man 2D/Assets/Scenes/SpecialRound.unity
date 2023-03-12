@@ -13017,6 +13017,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28739aa1573d48438cde6156b3dd85b, type: 3}
+--- !u!82 &1150546443 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3046639634643634339, guid: 1726b04bbfc89ed42b09549ddc9cf8d9, type: 3}
+  m_PrefabInstance: {fileID: 1963972424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1172438227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17303,7 +17308,7 @@ MonoBehaviour:
   timeCount: {fileID: 2838753417419415028}
   keyCount: {fileID: 2838753417560670691}
   deathCount: {fileID: 2838753416910264776}
-  _audio: {fileID: 0}
+  _audio: {fileID: 1150546443}
   _textAsset: {fileID: 4900000, guid: 4a78e027011f3ea47af17de2f44b833f, type: 3}
   timeCounting: 0
   timerIsRunning: 1

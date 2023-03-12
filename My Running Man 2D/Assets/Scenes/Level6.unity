@@ -19071,6 +19071,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 891737688}
+    - target: {fileID: 2838753417195040923, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 3046639635097151089}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
 --- !u!1001 &3046639635097151088
@@ -19130,6 +19134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1726b04bbfc89ed42b09549ddc9cf8d9, type: 3}
+--- !u!82 &3046639635097151089 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3046639634643634339, guid: 1726b04bbfc89ed42b09549ddc9cf8d9, type: 3}
+  m_PrefabInstance: {fileID: 3046639635097151088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6674103367651538188
 PrefabInstance:
   m_ObjectHideFlags: 0
