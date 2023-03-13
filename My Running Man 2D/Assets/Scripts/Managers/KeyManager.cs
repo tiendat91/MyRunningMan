@@ -9,8 +9,12 @@ public class KeyManager : Singleton<KeyManager>
 
     private void Start()
     {
-        PlayerPrefs.SetInt(KEY_KEYS, 0);
+        //PlayerPrefs.SetInt(KEY_KEYS, 0);
         LoadCoins();
+    }
+    private void Awake()
+    {
+        PlayerPrefs.SetInt(KEY_KEYS, 0);
     }
 
     private void Update()
@@ -26,9 +30,9 @@ public class KeyManager : Singleton<KeyManager>
         TotalKeys = PlayerPrefs.GetInt(KEY_KEYS, 0);
     }
 
-    public void AddKeys (int amount)
+    public void AddKeys (int amount = 10)
     {
-        TotalKeys += amount;
+        TotalKeys += 10;
         PlayerPrefs.SetInt(KEY_KEYS, TotalKeys);
         PlayerPrefs.Save();
     }

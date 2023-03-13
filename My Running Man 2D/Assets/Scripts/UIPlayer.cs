@@ -14,6 +14,7 @@ public class UIPlayer : MonoBehaviour
 
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject optionsSettings;
+    [SerializeField] private GameObject toturialSettings;
     [SerializeField] private TextMeshProUGUI timeCount;
     [SerializeField] private TextMeshProUGUI keyCount;
     [SerializeField] private TextMeshProUGUI deathCount;
@@ -21,6 +22,7 @@ public class UIPlayer : MonoBehaviour
     [SerializeField] private UnityEngine.TextAsset _textAsset;
 
     [SerializeField] public static float timeCounting = 10;
+    [SerializeField] public float timeCountingDown = 10;
     [SerializeField] private bool timerIsRunning = false;
     [SerializeField] private int numberOfDeath = 0;
     [SerializeField] private int keyCollected = 0;
@@ -51,19 +53,21 @@ public class UIPlayer : MonoBehaviour
 
         if (timerIsRunning)
         {
-            if (timeCounting >= 0)
+            if (timeCountingDown >= 0)
             {
-                timeCounting += Time.deltaTime;
+                timeCounting -= Time.deltaTime;
+                timeCountingDown -= Time.deltaTime;
             }
             else
             {
                 Debug.Log("Time has run out!");
                 timeCounting = 0;
                 timerIsRunning = false;
+                SceneManager.LoadScene("GameOver");
             }
         }
 
-        timeCount.text = TimeSpan.FromSeconds(timeCounting).ToString("hh':'mm':'ss");
+        timeCount.text = TimeSpan.FromSeconds(timeCountingDown).ToString("hh':'mm':'ss");
         UpdateKeys();
         UpdateDeaths();
     }
@@ -79,6 +83,21 @@ public class UIPlayer : MonoBehaviour
         {
             panelSettings.SetActive(false);
             optionsSettings.SetActive(false);
+            Time.timeScale = 1.0f;
+        }
+    }
+
+    public void TurnOnToturialMenu(bool isOn)
+    {
+        if (isOn)
+        {
+            Time.timeScale = 0f;
+            toturialSettings.SetActive(true);
+        }
+        else
+        {
+            toturialSettings.SetActive(false);
+            toturialSettings.SetActive(false);
             Time.timeScale = 1.0f;
         }
     }

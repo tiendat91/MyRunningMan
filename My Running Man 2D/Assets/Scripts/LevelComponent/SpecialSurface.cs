@@ -19,6 +19,7 @@ public class SpecialSurface : MonoBehaviour
         {
             return;
         }
+
         _playerController.AddHorizontalMovement(horizontalMovement);
     }
 
