@@ -38,8 +38,8 @@ public class Menu : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        ReadData();
-        GetHighScore();
+        //ReadData();
+        //GetHighScore();
         fileName = Application.dataPath + "/Data/Account_Player.csv";
         foreach (var panel in panels)
         {
@@ -127,7 +127,7 @@ public class Menu : MonoBehaviour
                 _currentAccount = acc;
                 ChangeSnailTaking("LOGIN SUCCESS!");
                 ChangetoOtherMenu(levelMenu);
-                DisplayLevel();
+                //DisplayLevel();
                 PlayerPrefs.SetString(KEY_NAME, acc.Name);
                 return;
             }

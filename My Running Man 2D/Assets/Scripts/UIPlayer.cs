@@ -14,6 +14,7 @@ public class UIPlayer : MonoBehaviour
 
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject optionsSettings;
+    [SerializeField] private GameObject toturialSettings;
     [SerializeField] private TextMeshProUGUI timeCount;
     [SerializeField] private TextMeshProUGUI keyCount;
     [SerializeField] private TextMeshProUGUI deathCount;
@@ -97,6 +98,18 @@ public class UIPlayer : MonoBehaviour
         }
     }
 
+    public void TurnOnToturialMenu(bool isOn)
+    {
+        if (isOn)
+        {
+            toturialSettings.SetActive(true);
+        }
+        else
+        {
+            toturialSettings.SetActive(false);
+        }
+    }
+
     public void TurnOnOffAudio(bool isCheck)
     {
         _audio.GetComponent<AudioSource>().mute = isCheck;
@@ -152,104 +165,104 @@ public class UIPlayer : MonoBehaviour
     //    }
     //}
 
-    public static void WriteDataWithTimeIntoAccount()
-    {
-        try
-        {
-            TextWriter tw = new StreamWriter(fileName,false);
-            tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6");
-            foreach (var acc in Menu.accounts)
-            {
-                Debug.Log(PlayerPrefs.GetString(KEY_NAME).ToLower().ToString());
-                if(PlayerPrefs.GetString(KEY_NAME).ToLower().ToString() == acc.Name){
-                    if (SceneManager.GetActiveScene().name != null)
-                    {
-                        switch (SceneManager.GetActiveScene().name)
-                        {
-                            case "Level1"://LEVEL 1
-                                if(acc.Level1 == 0)
-                                {
-                                    acc.Level1 = timeCounting;
-                                    break;
-                                }
-                                if (timeCounting < acc.Level1)
-                                {
-                                    acc.Level1 = timeCounting;
-                                }
-                                break;
-                            case "Level2"://LEVEL 2
-                                if (acc.Level2 == 0)
-                                {
-                                    acc.Level2 = timeCounting;
-                                    break;
-                                }
-                                if (timeCounting < acc.Level2)
-                                {
-                                    acc.Level2 = timeCounting;
-                                }
-                                break;
-                            case "Level3"://LEVEL 3
-                                if (acc.Level3 == 0)
-                                {
-                                    acc.Level3 = timeCounting;
-                                    break;
-                                }
-                                if (timeCounting < acc.Level3)
-                                {
-                                    acc.Level3 = timeCounting;
-                                }
-                                break;
-                            case "Level4"://LEVEL 4
-                                if (acc.Level4 == 0)
-                                {
-                                    acc.Level4 = timeCounting;
-                                    break;
-                                }
-                                if (timeCounting < acc.Level4)
-                                {
-                                    acc.Level4 = timeCounting;
-                                }
-                                break;
-                            case "Level5"://LEVEL 5
-                                if (acc.Level5 == 0)
-                                {
-                                    acc.Level5 = timeCounting;
-                                    break;
-                                }
-                                if (timeCounting < acc.Level5)
-                                {
-                                    acc.Level5 = timeCounting;
-                                }
-                                break;
-                            case "Level6"://LEVEL 6
-                                if (acc.Level6 == 0)
-                                {
-                                    acc.Level6 = timeCounting;
-                                    break;
-                                }
-                                if (timeCounting < acc.Level6)
-                                {
-                                    acc.Level6 = timeCounting;
-                                }
-                                break;
-                        }
-                    }
-                }
+    //public static void WriteDataWithTimeIntoAccount()
+    //{
+    //    try
+    //    {
+    //        TextWriter tw = new StreamWriter(fileName,false);
+    //        tw.WriteLine("Name,Password,Score,NumberOfDeath,TimePlaying,Level1,Level2,Level3,Level4,Level5,Level6");
+    //        foreach (var acc in Menu.accounts)
+    //        {
+    //            Debug.Log(PlayerPrefs.GetString(KEY_NAME).ToLower().ToString());
+    //            if(PlayerPrefs.GetString(KEY_NAME).ToLower().ToString() == acc.Name){
+    //                if (SceneManager.GetActiveScene().name != null)
+    //                {
+    //                    switch (SceneManager.GetActiveScene().name)
+    //                    {
+    //                        case "Level1"://LEVEL 1
+    //                            if(acc.Level1 == 0)
+    //                            {
+    //                                acc.Level1 = timeCounting;
+    //                                break;
+    //                            }
+    //                            if (timeCounting < acc.Level1)
+    //                            {
+    //                                acc.Level1 = timeCounting;
+    //                            }
+    //                            break;
+    //                        case "Level2"://LEVEL 2
+    //                            if (acc.Level2 == 0)
+    //                            {
+    //                                acc.Level2 = timeCounting;
+    //                                break;
+    //                            }
+    //                            if (timeCounting < acc.Level2)
+    //                            {
+    //                                acc.Level2 = timeCounting;
+    //                            }
+    //                            break;
+    //                        case "Level3"://LEVEL 3
+    //                            if (acc.Level3 == 0)
+    //                            {
+    //                                acc.Level3 = timeCounting;
+    //                                break;
+    //                            }
+    //                            if (timeCounting < acc.Level3)
+    //                            {
+    //                                acc.Level3 = timeCounting;
+    //                            }
+    //                            break;
+    //                        case "Level4"://LEVEL 4
+    //                            if (acc.Level4 == 0)
+    //                            {
+    //                                acc.Level4 = timeCounting;
+    //                                break;
+    //                            }
+    //                            if (timeCounting < acc.Level4)
+    //                            {
+    //                                acc.Level4 = timeCounting;
+    //                            }
+    //                            break;
+    //                        case "Level5"://LEVEL 5
+    //                            if (acc.Level5 == 0)
+    //                            {
+    //                                acc.Level5 = timeCounting;
+    //                                break;
+    //                            }
+    //                            if (timeCounting < acc.Level5)
+    //                            {
+    //                                acc.Level5 = timeCounting;
+    //                            }
+    //                            break;
+    //                        case "Level6"://LEVEL 6
+    //                            if (acc.Level6 == 0)
+    //                            {
+    //                                acc.Level6 = timeCounting;
+    //                                break;
+    //                            }
+    //                            if (timeCounting < acc.Level6)
+    //                            {
+    //                                acc.Level6 = timeCounting;
+    //                            }
+    //                            break;
+    //                    }
+    //                }
+    //            }
 
-                tw.WriteLine(acc.Name + "," + acc.Password + ","
-                    + acc.Score + "," + acc.NumberOfDeath + ","
-                    + acc.TimePLaying + "," + acc.Level1 + ","
-                    + acc.Level2 + "," + acc.Level3 + ","
-                    + acc.Level4 + "," + acc.Level5 + ","
-                    + acc.Level6);
-            }
-            tw.Close();
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-    }
+    //            tw.WriteLine(acc.Name + "," + acc.Password + ","
+    //                + acc.Score + "," + acc.NumberOfDeath + ","
+    //                + acc.TimePLaying + "," + acc.Level1 + ","
+    //                + acc.Level2 + "," + acc.Level3 + ","
+    //                + acc.Level4 + "," + acc.Level5 + ","
+    //                + acc.Level6);
+    //        }
+    //        tw.Close();
+    //    }
+    //    catch (Exception)
+    //    {
+    //        throw;
+    //    }
+    //}
 
 
     public static void ResetTimeCounting()

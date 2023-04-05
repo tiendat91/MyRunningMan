@@ -25,10 +25,10 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            RevivePlayer();
-        }
+        //if (Input.GetKeyUp(KeyCode.R))
+        //{
+        //    RevivePlayer();
+        //}
     }
 
     private void Start()

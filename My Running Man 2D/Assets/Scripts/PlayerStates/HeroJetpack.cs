@@ -27,14 +27,14 @@ public class HeroJetpack : HeroStates
     }
     protected override void GetInput()
     {
-        if (Input.GetKey(KeyCode.X))
-        {
-            JetPack();
-        }
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            EndJetPack();
-        }
+        //if (Input.GetKey(KeyCode.X))
+        //{
+        //    JetPack();
+        //}
+        //if (Input.GetKeyUp(KeyCode.X))
+        //{
+        //    EndJetPack();
+        //}
     }
     private void Update()
     {

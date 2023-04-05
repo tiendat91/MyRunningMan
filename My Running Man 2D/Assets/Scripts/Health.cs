@@ -38,10 +38,10 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            LoseLife();
-        }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    LoseLife();
+        //}
     }
 
     /// <summary>
