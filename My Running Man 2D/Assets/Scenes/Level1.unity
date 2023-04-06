@@ -5515,11 +5515,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f1c948eddaf571f47941e4b8f836d4cf, type: 2}
     - target: {fileID: 2838753416072019193, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2838753416072019193, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2838753416072019193, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
       propertyPath: m_fontColor.r
@@ -5531,10 +5531,14 @@ PrefabInstance:
       objectReference: {fileID: 9008999147735442124, guid: f1c948eddaf571f47941e4b8f836d4cf, type: 2}
     - target: {fileID: 2838753416072019193, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190335
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2838753416193467404, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2838753416713209081, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
+      propertyPath: m_ScreenMatchMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2838753416713209083, guid: da8ac7e4ae85be240980066cefbe4c5e, type: 3}
