@@ -8,7 +8,7 @@ public class HeroStates : MonoBehaviour
     protected Animator _animator;
     protected float _horizontalInput;
     protected float _verticalInput;
-
+    private float buttonClick;
     protected virtual void Start()
     {
         InitState();
@@ -24,11 +24,28 @@ public class HeroStates : MonoBehaviour
 
     }
 
+    public void GoLeft()
+    {
+        buttonClick = -1;
+        GetInput();
+    }
+    public void GoRight()
+    {
+        buttonClick = 1;
+        GetInput();
+    }
+    public void UnpressButton()
+    {
+        buttonClick = 0;
+        GetInput();
+    }
+
+
     public virtual void LocalInput()
     {
-        _horizontalInput = Input.GetAxisRaw("Horizontal");
+        _horizontalInput = buttonClick;
         _verticalInput = Input.GetAxisRaw("Vertical");
-
+        
         GetInput();
     }
 

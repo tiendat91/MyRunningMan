@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 130755477357957992}
   - component: {fileID: 130755477357957999}
   - component: {fileID: 130755477357957998}
+  - component: {fileID: 3374027880870123143}
   - component: {fileID: 4793444329114221568}
   - component: {fileID: 130755477357957996}
   - component: {fileID: 8934269979468479726}
   - component: {fileID: 2689174554978369918}
   - component: {fileID: 4616457550780335928}
   - component: {fileID: 7999703694126907203}
-  - component: {fileID: 3374027880870123143}
   - component: {fileID: 7567814808879663083}
   - component: {fileID: 8242329531417488728}
   - component: {fileID: 3641383026509626503}
@@ -123,6 +123,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3213577, y: 1.7143251}
   m_EdgeRadius: 0
+--- !u!95 &3374027880870123143
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130755477357957986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d0630002a32b544f8511ff7cd2c2791, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4793444329114221568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,26 +229,6 @@ MonoBehaviour:
   jetpackForce: 3
   jetpackFuel: 5
   _fuelLeft: 5
---- !u!95 &3374027880870123143
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130755477357957986}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4d0630002a32b544f8511ff7cd2c2791, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7567814808879663083
 MonoBehaviour:
   m_ObjectHideFlags: 0

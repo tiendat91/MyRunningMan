@@ -34,7 +34,7 @@ public class HeroJump : HeroStates
         }
     }
 
-    private void Jump()
+    public void Jump()
     {
         if (!CanJump())
         {

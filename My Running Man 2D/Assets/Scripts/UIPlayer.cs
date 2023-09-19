@@ -11,7 +11,6 @@ using UnityEngine.UIElements;
 public class UIPlayer : MonoBehaviour
 {
 
-
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject optionsSettings;
     [SerializeField] private GameObject toturialSettings;
