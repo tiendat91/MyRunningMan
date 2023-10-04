@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroConditions : MonoBehaviour
+public class HeroConditions
 {
     public bool IsCollidingBelow { get; set; }
     public bool IsCollidingAbove { get; set; }

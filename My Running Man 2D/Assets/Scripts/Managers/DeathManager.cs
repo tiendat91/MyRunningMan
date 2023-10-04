@@ -28,5 +28,6 @@ public class DeathManager : Singleton<DeathManager>
         TotalDeaths += 1;
         PlayerPrefs.SetInt(KEY_DEATHS, TotalDeaths);
         PlayerPrefs.Save();
+
     }
 }

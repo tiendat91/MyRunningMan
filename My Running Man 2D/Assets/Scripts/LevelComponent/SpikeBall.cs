@@ -7,7 +7,6 @@ public class SpikeBall : LevelComponent
     public override void Damage(HeroMotor player)
     {
         base.Damage(player);
-        Debug.Log("SpikeBall");
     }
 
 }

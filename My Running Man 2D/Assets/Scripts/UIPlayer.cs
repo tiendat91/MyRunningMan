@@ -23,10 +23,10 @@ public class UIPlayer : MonoBehaviour
     [SerializeField] public static float timeCounting = 10;
     [SerializeField] private bool timerIsRunning = false;
     [SerializeField] private int numberOfDeath = 0;
-    [SerializeField] private int keyCollected = 0;
+    //[SerializeField] private int keyCollected = 0;
     public static string KEY_NAME = "MyGame_NAME";
-
-
+    private Animator _dieTextAnimator;
+    private int _dieParameter = Animator.StringToHash("change");
     public List<Account> Accounts { get; set; }
 
     private static string fileName = null;
@@ -36,7 +36,7 @@ public class UIPlayer : MonoBehaviour
     {
         timerIsRunning = true;
         fileName = Application.dataPath + "/Data/Account_Player.csv";
-
+        _dieTextAnimator = deathCount.GetComponent<Animator>();
         panelSettings.SetActive(false);
         optionsSettings.SetActive(false);
         //ReadData();
@@ -45,10 +45,6 @@ public class UIPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.Escape)) {
-        //    TurnOnPauseMenu(true);
-        //}
-
         if (timerIsRunning)
         {
             if (timeCounting >= 0)
@@ -62,7 +58,7 @@ public class UIPlayer : MonoBehaviour
                 timerIsRunning = false;
             }
         }
-
+        numberOfDeath = DeathManager.Instance.TotalDeaths;
         timeCount.text = TimeSpan.FromSeconds(timeCounting).ToString("hh':'mm':'ss");
         UpdateKeys();
         UpdateDeaths();
@@ -129,9 +125,21 @@ public class UIPlayer : MonoBehaviour
         keyCount.text = KeyManager.Instance.TotalKeys.ToString(); 
     }
 
+
     public void UpdateDeaths()
     {
-        deathCount.text = "X "+ DeathManager.Instance.TotalDeaths.ToString();
+        deathCount.text = "X "+ numberOfDeath;
+        _dieTextAnimator.SetTrigger(_dieParameter);
+    }
+
+    private IEnumerator UpdateTextDieEverySecond()
+    {
+        while (true)
+        {
+            deathCount.color = Color.red;
+
+            yield return new WaitForSeconds(1f); // Wait for 1 second
+        }
     }
 
     //public void ReadData()

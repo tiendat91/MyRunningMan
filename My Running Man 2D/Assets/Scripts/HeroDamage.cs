@@ -6,10 +6,7 @@ public class HeroDamage : MonoBehaviour
 {
     private void Collision(Collider2D objectCollided)
     {
-        if (objectCollided.GetComponent<Health>() != null)
-        {
-            objectCollided.GetComponent<Health>().LoseLife();
-        }
+
     }
 
     private void OnEnable()

@@ -25,7 +25,7 @@ public class SpecialRoundManager : MonoBehaviour
         NumberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy").Count();
         if (NumberOfEnemies == 0)
         {
-            Menu.selectedLevel = "special";
+            Menu.selectedLevel = 0;
             SceneManager.LoadScene("GameOver");
         }
         

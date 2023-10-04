@@ -7,7 +7,7 @@ public class Blade : LevelComponent
     public override void Damage(HeroMotor player)
     {
         base.Damage(player);
-        Debug.Log("Blade");
+        //Debug.Log("Blade");
     }
 
 }

@@ -29,14 +29,17 @@ public class Menu : MonoBehaviour
     private static string _currentPassword;
     private static string _currentConfirmPassword;
     private string fileName = null;
-    public static string selectedLevel;
+    public static int selectedLevel;
     public string NameLogin { get; set; }
     private string KEY_NAME = "MyGame_NAME";
+    private static string KEY_PROCESS = "MyGame_PROCESS";
 
     public List<Account> Accounts { get; set; }
 
     void Start()
     {
+        LoadGameProcess();
+
         Time.timeScale = 1f;
         //ReadData();
         //GetHighScore();
@@ -48,11 +51,53 @@ public class Menu : MonoBehaviour
         panels[0].SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
     }
 
+    public void LoadGameProcess()
+    {
+        string savedJson = PlayerPrefs.GetString(KEY_PROCESS);
+
+        //deactive all level
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
+        //open first-level
+        int currentLevel = 1;
+        if (!string.IsNullOrEmpty(savedJson))
+        {
+            GameProgress loadedProgress = JsonUtility.FromJson<GameProgress>(savedJson);
+            if(loadedProgress.level !=0 && loadedProgress.level != null)
+            {
+                currentLevel = (int)loadedProgress.level;
+            }
+            // Use the loadedProgress data in your game
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (i <= (currentLevel-1))
+                {
+                    buttons[i].interactable = true;
+                }
+            }
+        }
+        else
+        {
+            //Store game for new player
+            SaveGameProcess(1, 0);
+        }
+        buttons[currentLevel-1].interactable = true;
+    }
+    public static void SaveGameProcess(int? level, int? score)
+    {
+        GameProgress gameProgress = new GameProgress();
+        gameProgress.level = (int)level;
+        gameProgress.score = (int)score;
+        string json = JsonUtility.ToJson(gameProgress);
+        PlayerPrefs.SetString(KEY_PROCESS, json);
+        PlayerPrefs.Save();
+    }
     public void ChangetoOtherMenu(GameObject gameObject)
     {
         foreach (var panel in panels)
@@ -67,7 +112,6 @@ public class Menu : MonoBehaviour
             }
         }
     }
-
     public void BackToMainMenu()
     {
         foreach (var panel in panels)
@@ -81,19 +125,16 @@ public class Menu : MonoBehaviour
 
         ChangeSnailTaking("READY FOR YOUR ADVENTURE?");
     }
-
     public void QuitGame()
     {
         ReadData();
         Application.Quit();
         //UnityEditor.EditorApplication.isPlaying = false;
     }
-
     public void TurnOnOffAudio(bool isCheck)
     {
         _audio.GetComponent<AudioSource>().mute = isCheck;
     }
-
     public void TypingName(string n)
     {
         _currentName = n.ToLower().Trim();
@@ -117,7 +158,6 @@ public class Menu : MonoBehaviour
             ChangeSnailTaking("CONFIRM PASSWORD IS MATCH");
         }
     }
-
     public void LogInAccount(GameObject levelMenu)
     {
         foreach(var acc in accounts)
@@ -135,12 +175,10 @@ public class Menu : MonoBehaviour
         ChangeSnailTaking("LOGIN FAIL!");
 
     }
-
     public void ChangeSnailTaking(string s)
     {
         SnailTalk.text = s;
     }
-
     public void LinkContact(int options)
     {
         switch (options)
@@ -153,7 +191,6 @@ public class Menu : MonoBehaviour
                 break;
         }
     }
-
     public void ReadData()
     {
         string[] data = _textAsset.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
@@ -186,7 +223,6 @@ public class Menu : MonoBehaviour
 
         Accounts = accounts;
     }
-
     public void GetHighScore()
     {
         //TOP 5 NGUOI CHOI: HOAN THANG 6 MAN TRONG THOI GIAN NHANH NHAT
@@ -207,7 +243,6 @@ public class Menu : MonoBehaviour
         }
 
     }
-
     public void WriteData()
     {
         try
@@ -230,7 +265,6 @@ public class Menu : MonoBehaviour
             throw;
         }
     }
-
     public void RegisterAccount(GameObject loginMenu)
     {
         if(_currentName == null)
@@ -273,56 +307,9 @@ public class Menu : MonoBehaviour
         ChangeSnailTaking("REGISTER SUCCESS!");
         ChangetoOtherMenu(loginMenu);
     }
-    //Time level > 0 -> interatable
-    public void DisplayLevel()
-    {
-        foreach (var button in buttons) { 
-            button.GetComponent<Button>().interactable = false;
-        }
-        buttons.AsQueryable().FirstOrDefault(x => x.name == "SpecialRound").interactable = true;
-        //NGUOI CHOI MOI DANG KY SE BAT DAU CHOI TU LELVEL 1
-        buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 1").interactable = true;
-
-        if (_currentAccount != null)
-            {
-                if (_currentAccount.Level2 > 0)
-                {
-                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 2").interactable = true;
-
-                }
-                if (_currentAccount.Level3 > 0)
-                {
-                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 3").interactable = true;
-
-                }
-                if (_currentAccount.Level4 > 0)
-                {
-                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 4").interactable = true;
-
-                }
-                if (_currentAccount.Level5 > 0)
-                {
-                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 5").interactable = true;
-
-                }
-                if (_currentAccount.Level6 > 0)
-                {
-                    buttons.AsQueryable().FirstOrDefault(x => x.name == "Level 6").interactable = true;
-
-                }
-            }
-    }
-
-    public void ChoosingLevel(string level)
+    public void ChoosingLevel(int level)
     {
         selectedLevel = level;    
         SceneManager.LoadScene("Loading");
     }
-
-
-    public void SelectLevel()
-    {
-
-    }
-
 }

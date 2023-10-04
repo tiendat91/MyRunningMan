@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class CheckPoint : MonoBehaviour
 {
@@ -10,13 +11,13 @@ public class CheckPoint : MonoBehaviour
     private string KEY_KEYS = "MyGame_TOTAL_KEYS";
 
 
-    [Header("Settigns")]
-    [SerializeField] private string nextLevelName;
+    [Header("Settings")]
+    [SerializeField] private int nextLevel;
     [SerializeField] private GameObject chatBubble;
 
     private void Start()
     {
-        chatBubble.active = false;
+        chatBubble.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,15 +25,14 @@ public class CheckPoint : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             if (PlayerPrefs.GetInt(KEY_KEYS, 0) == 3) {
-                //UIPlayer.WriteDataWithTimeIntoAccount();
-                Menu.selectedLevel = nextLevelName;
+                Menu.SaveGameProcess(nextLevel, 0);
+                Menu.selectedLevel = nextLevel;
                 SceneManager.LoadScene("Loading");
             }
             else
             {
-                chatBubble.active = true;
+                chatBubble.SetActive(true);
             }
         }
     }
-
 }

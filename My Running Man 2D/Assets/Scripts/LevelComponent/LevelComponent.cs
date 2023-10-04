@@ -10,17 +10,9 @@ public class LevelComponent : MonoBehaviour, IDamageable
     {
         if (player != null)
         {
-            if (instantKill)
-            {
                 //kill player immediately
                 DeathManager.Instance.AddDeaths();
                 player.GetComponent<Health>().KillPlayer();
-            }
-            else
-            {
-                player.GetComponent<Health>().LoseLife();
-            }
-
         }
     }
 }

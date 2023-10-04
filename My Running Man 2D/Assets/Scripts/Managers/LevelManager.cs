@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "SpecialRound")
             {
-                Menu.selectedLevel = "special";
+                Menu.selectedLevel = 0;
                 SceneManager.LoadScene("GameOver");
             }
             _currentPlayer.gameObject.SetActive(true);

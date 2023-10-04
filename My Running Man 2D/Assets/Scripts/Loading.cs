@@ -23,28 +23,25 @@ public class Loading : MonoBehaviour
         {
             switch (Menu.selectedLevel)
             {
-                case "special"://SPECIAL ROUND
-                    SceneManager.LoadScene("SpecialRound");
-                    break;
-                case "level1"://LEVEL 1
+                case 1://LEVEL 1
                     SceneManager.LoadScene("Level1");
                     break;
-                case "level2"://LEVEL 2
+                case 2://LEVEL 2
                     SceneManager.LoadScene("Level2");
                     break;
-                case "level3"://LEVEL 3
+                case 3://LEVEL 3
                     SceneManager.LoadScene("Level3");
                     break;
-                case "level4"://LEVEL 4
+                case 4://LEVEL 4
                     SceneManager.LoadScene("Level4");
                     break;
-                case "level5"://LEVEL 5
+                case 5://LEVEL 5
                     SceneManager.LoadScene("Level5");
                     break;
-                case "level6"://LEVEL 6
+                case 6://LEVEL 6
                     SceneManager.LoadScene("Level6");
                     break;
-                case "menu":
+                case 7:
                     SceneManager.LoadScene("Menu");
                     break;
             }

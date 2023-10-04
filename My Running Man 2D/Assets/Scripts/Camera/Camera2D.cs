@@ -36,6 +36,7 @@ public class Camera2D : MonoBehaviour
         if (Hero == null)
         {
             //stop moving when we dont have a hero/ hero is null
+            Debug.Log("Hero is not found");
             return;
         }
 
@@ -88,7 +89,6 @@ public class Camera2D : MonoBehaviour
     {
         Hero = player;
         Vector3 targetPosition = GetHeroPosition(Hero);
-
         //set smooth at the begining start
         _targetHorizontalSmoothFollow = targetPosition.x;
         _targetVerticalSmoothFollow = targetPosition.y;

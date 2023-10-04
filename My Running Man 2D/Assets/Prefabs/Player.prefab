@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abc63d4342d0b44faff16620afc689b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2.459
+  jumpHeight: 2.5
   maxJumps: 2
 --- !u!114 &4616457550780335928
 MonoBehaviour:
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130755477357957986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee5ac9c55a6ad64b9ca6bb7de57dfb2, type: 3}
   m_Name: 
