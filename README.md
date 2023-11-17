@@ -1,5 +1,5 @@
 # MyRunningMan
-![Menu Screen](https://github.com/tiendat91/MyRunningMan/raw/final-main/ReadMe/menuScreen.png)
+![Menu Screen](https://github.com/tiendat91/MyRunningMan/blob/final-main/ReadMe/menuScreen.png)
 Lets join with me and jump into the fun with our 2D Pixel Platformer game! 
 
 # How To Play?
